@@ -29,31 +29,6 @@
   
   
   <entry>
-    <title>通过git部署代码到GitHub</title>
-    <link href="/2022/03/26/%E9%80%9A%E8%BF%87git%E9%83%A8%E7%BD%B2%E4%BB%A3%E7%A0%81%E5%88%B0GitHub/"/>
-    <url>/2022/03/26/%E9%80%9A%E8%BF%87git%E9%83%A8%E7%BD%B2%E4%BB%A3%E7%A0%81%E5%88%B0GitHub/</url>
-    
-    <content type="html"><![CDATA[<h3 id="1-前提条件"><a href="#1-前提条件" class="headerlink" title="1.前提条件"></a>1.前提条件</h3><ul><li><a href="https://github.com/github">注册Github</a></li><li><a href="https://git-scm.com/">下载GIT工具</a></li></ul><h3 id="2-创建Github仓库"><a href="#2-创建Github仓库" class="headerlink" title="2.创建Github仓库"></a>2.创建Github仓库</h3><p><img src="https://s1.ax1x.com/2022/03/27/q0YAij.png" alt="创建一个仓库"><br><img src="https://s1.ax1x.com/2022/03/27/q0YEJs.png" alt="输入仓库的名字,点击creat repository即可"><br><img src="https://s1.ax1x.com/2022/03/27/q0YFoQ.png" alt="仓库地址"></p><h3 id="3-开始部署"><a href="#3-开始部署" class="headerlink" title="3.开始部署"></a>3.开始部署</h3><p>以管理员命令打开git窗口<br>可预防后期一些错误,但是需要手动输入路径<br>也可以在文件夹中右击选择git bash here<br><img src="https://s1.ax1x.com/2022/03/27/q0t5DK.png" alt="管理员打开"><br><img src="https://s1.ax1x.com/2022/03/27/q0t4u6.png" alt="文件夹内打开"></p><figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div></td><td class="code"><pre><code class="hljs java">获取磁盘位置<br>cd /d/phpdoc<br><br>初始化git工具<br>git init<br><br>本地文件添加到Git<br>git add .<br><br>文件备注<br>git commit -m <span class="hljs-string">&#x27;这里写备注&#x27;</span><br><br>上传仓库<br>git remote add origin 你的仓库地址<br><br>开始上传<br>git push -u origin master<br></code></pre></td></tr></table></figure><p>最后可能会提示输入GitHub账号和密码,输入即可<br>也可以提前输入以下代码</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">git config --global user.name <span class="hljs-string">&quot;你的GitHub名称&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;注册时候的email&quot;</span><br></code></pre></td></tr></table></figure><p>更新仓库至需要执行第3&#x2F;4&#x2F;6的代码即可</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Tools</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>git</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>方法总结</title>
     <link href="/2022/03/26/%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/"/>
     <url>/2022/03/26/%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</url>
@@ -96,6 +71,31 @@
     <tags>
       
       <tag>面向对象</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>通过git部署代码到GitHub</title>
+    <link href="/2022/03/26/%E9%80%9A%E8%BF%87git%E9%83%A8%E7%BD%B2%E4%BB%A3%E7%A0%81%E5%88%B0GitHub/"/>
+    <url>/2022/03/26/%E9%80%9A%E8%BF%87git%E9%83%A8%E7%BD%B2%E4%BB%A3%E7%A0%81%E5%88%B0GitHub/</url>
+    
+    <content type="html"><![CDATA[<h3 id="1-前提条件"><a href="#1-前提条件" class="headerlink" title="1.前提条件"></a>1.前提条件</h3><ul><li><a href="https://github.com/github">注册Github</a></li><li><a href="https://git-scm.com/">下载GIT工具</a></li></ul><h3 id="2-创建Github仓库"><a href="#2-创建Github仓库" class="headerlink" title="2.创建Github仓库"></a>2.创建Github仓库</h3><p><img src="https://s1.ax1x.com/2022/03/27/q0YAij.png" alt="创建一个仓库"><br><img src="https://s1.ax1x.com/2022/03/27/q0YEJs.png" alt="输入仓库的名字,点击creat repository即可"><br><img src="https://s1.ax1x.com/2022/03/27/q0YFoQ.png" alt="仓库地址"></p><h3 id="3-开始部署"><a href="#3-开始部署" class="headerlink" title="3.开始部署"></a>3.开始部署</h3><p>以管理员命令打开git窗口<br>可预防后期一些错误,但是需要手动输入路径<br>也可以在文件夹中右击选择git bash here<br><img src="https://s1.ax1x.com/2022/03/27/q0t5DK.png" alt="管理员打开"><br><img src="https://s1.ax1x.com/2022/03/27/q0t4u6.png" alt="文件夹内打开"></p><figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div></td><td class="code"><pre><code class="hljs java">获取磁盘位置<br>cd /d/phpdoc<br><br>初始化git工具<br>git init<br><br>本地文件添加到Git<br>git add .<br><br>文件备注<br>git commit -m <span class="hljs-string">&#x27;这里写备注&#x27;</span><br><br>上传仓库<br>git remote add origin 你的仓库地址<br><br>开始上传<br>git push -u origin master<br></code></pre></td></tr></table></figure><p>最后可能会提示输入GitHub账号和密码,输入即可<br>也可以提前输入以下代码</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">git config --global user.name <span class="hljs-string">&quot;你的GitHub名称&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;注册时候的email&quot;</span><br></code></pre></td></tr></table></figure><p>更新仓库至需要执行第3&#x2F;4&#x2F;6的代码即可</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Tools</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>git</tag>
       
     </tags>
     
