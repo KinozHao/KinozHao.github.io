@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" href="/img/Frygar.ico">
+  <link rel="icon" href="/img/notebook.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/javasss.png">
 <meta property="article:published_time" content="2022-03-28T14:12:30.000Z">
-<meta property="article:modified_time" content="2022-03-31T10:47:30.472Z">
+<meta property="article:modified_time" content="2022-03-31T14:41:28.184Z">
 <meta property="article:author" content="Kinoz">
 <meta property="article:tag" content="面向对象">
 <meta name="twitter:card" content="summary_large_image">
@@ -81,7 +81,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>保持热爱🐱</strong>
+      <strong>Keep Your Love❤</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -251,7 +251,7 @@
 </ol>
 <h3 id="1-3封装的好处"><a href="#1-3封装的好处" class="headerlink" title="1.3封装的好处"></a>1.3封装的好处</h3><ol>
 <li>隐藏实现细节，提供公共的访问方式</li>
-<li>提高了代码的复用性，提高安全性<figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">test</span>&#123;<br>	pirvate <span class="hljs-type">int</span> age;	<span class="hljs-comment">//修饰属性</span><br>	<span class="hljs-keyword">private</span> String name;<br>    <br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">test</span><span class="hljs-params">()</span>&#123;	<span class="hljs-comment">//修饰构造器</span><br>    <br>    &#125;<br>    poublic <span class="hljs-keyword">void</span> <span class="hljs-title function_">eat</span><span class="hljs-params">()</span>&#123;	<span class="hljs-comment">//修饰方法</span><br>    <br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li>提高了代码的复用性，提高安全性<figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">test</span>&#123;<br>	<span class="hljs-keyword">private</span> <span class="hljs-type">int</span> age;	<span class="hljs-comment">//修饰属性</span><br>	<span class="hljs-keyword">private</span> String name;<br>    <br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">test</span><span class="hljs-params">()</span>&#123;	<span class="hljs-comment">//修饰构造器</span><br>    <br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">eat</span><span class="hljs-params">()</span>&#123;	<span class="hljs-comment">//修饰方法</span><br>    <br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="1-4高内聚-低耦合"><a href="#1-4高内聚-低耦合" class="headerlink" title="1.4高内聚 低耦合"></a>1.4高内聚 低耦合</h3><p>高内聚:类的内部数据操作细节自己完成，不允许外部干涉<br>低耦合:仅对外暴漏少量的方法用于使用</p>
 <h3 id="1-5属性的获取"><a href="#1-5属性的获取" class="headerlink" title="1.5属性的获取"></a>1.5属性的获取</h3><p>在对一个属性私有化的同时，除了提供公共的设置方法外，还需要提供获取方法<br>即 set方法与get方法<br>两种方法共同构成了属性的获取<br>注：这只是封装性的一种体现，并不能完全代表封装性</p>
@@ -280,7 +280,7 @@
 <li>没有返回值类型</li>
 <li>没有具体的返回值，但是可以写return\也可以不写</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java">主类:<br><span class="hljs-type">Person</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>();<span class="hljs-comment">//new后面的就是构造器</span><br><span class="hljs-comment">//c.Person();  构造方法不能用对象调用</span><br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span>&#123;<br>	publicPerson()&#123;<br>		name=<span class="hljs-string">&quot;小明&quot;</span>;<br>		age=<span class="hljs-number">21</span>;<br>		<span class="hljs-comment">//有return语句，但可不写</span><br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java">主类:<br><span class="hljs-type">Person</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>();<span class="hljs-comment">//new后面的就是构造器</span><br><span class="hljs-comment">//c.Person();  构造方法不能用对象调用</span><br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span>&#123;<br>	<span class="hljs-keyword">public</span> <span class="hljs-title function_">Person</span><span class="hljs-params">()</span>&#123;<br>		name=<span class="hljs-string">&quot;小明&quot;</span>;<br>		age=<span class="hljs-number">21</span>;<br>		<span class="hljs-comment">//有return语句，但可不写</span><br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h3 id="4-3属性赋值"><a href="#4-3属性赋值" class="headerlink" title="4.3属性赋值"></a>4.3属性赋值</h3><p>属性赋值的先后顺序:<br>默认初始化&gt;显示初始化&gt;构造器初始化&gt;开发常用的</p>
 <p>通过对象.方法或对象.属性的方式赋值<br>开发常用比较灵活</p>
@@ -338,6 +338,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2022/03/31/PicGo%E9%85%8D%E5%90%88%E8%85%BE%E8%AE%AFCOS%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%9B%BE%E5%BA%8A/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">PicGo和腾讯COS搭建图床</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
