@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>面向对象:继承性</title>
+    <link href="/2022/04/05/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BB%A7%E6%89%BF%E6%80%A7/"/>
+    <url>/2022/04/05/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BB%A7%E6%89%BF%E6%80%A7/</url>
+    
+    <content type="html"><![CDATA[<h2 id="1-什么是继承性"><a href="#1-什么是继承性" class="headerlink" title="1.什么是继承性"></a>1.什么是继承性</h2><h3 id="1-1继承体现"><a href="#1-1继承体现" class="headerlink" title="1.1继承体现"></a>1.1继承体现</h3><ol><li>继承(extends)让类与类之间产生关系,子父类关系</li><li>Animal是父类，cat和dog都是子类</li><li>书写格式 class cat extends Animal{}</li></ol><h3 id="1-2代码体现"><a href="#1-2代码体现" class="headerlink" title="1.2代码体现"></a>1.2代码体现</h3><figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></div></td><td class="code"><pre><code class="hljs java">主类<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MainMethod</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">dog</span> <span class="hljs-variable">d</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">dog</span>();<br>        d.color = <span class="hljs-string">&quot;black&quot;</span>;<br>        d.leg = <span class="hljs-number">4</span> ;<br>        d.eat();<br>        d.sleep();<br>    &#125;<br>&#125;<br><br>动物类<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">animals</span>&#123;<br>    String color;    <span class="hljs-comment">//动物的颜色</span><br>    <span class="hljs-type">int</span> leg; <span class="hljs-comment">//动物腿的个数</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">eat</span><span class="hljs-params">()</span>&#123;    <span class="hljs-comment">//吃饭的功能</span><br>         System.out.println(<span class="hljs-string">&quot;吃饭&quot;</span>);<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">sleep</span><span class="hljs-params">()</span>&#123;  <span class="hljs-comment">//睡觉的功能</span><br>         System.out.println(<span class="hljs-string">&quot;睡觉&quot;</span>);<br>    &#125;<br>&#125;<br><br>狗类<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">dog</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">animals</span>&#123;<br>    String color;<br>    <span class="hljs-type">int</span> leg;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">eat</span><span class="hljs-params">()</span>&#123;<br>         System.out.println(<span class="hljs-string">&quot;吃饭&quot;</span>);<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">sleep</span><span class="hljs-params">()</span>&#123;<br>         System.out.println(<span class="hljs-string">&quot;睡觉&quot;</span>);<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure><h3 id="1-3继承核心"><a href="#1-3继承核心" class="headerlink" title="1.3继承核心"></a>1.3继承核心</h3><ol><li>Java只支持单继承,不支持多继承</li><li>Java支持多层继承(继承体系)</li><li>子类继承父类就获得了父类所有的属性与方法</li><li>父类的私有结构，子类依然可以继承，只是因为封装性的影响，不能直接调用父类的结构而已</li><li>如果要看这个体系的所有功能用最底层的类创建对象</li><li>如果想看这个体系的共性功能,看最顶层的类</li></ol><h3 id="1-3继承利弊"><a href="#1-3继承利弊" class="headerlink" title="1.3继承利弊"></a>1.3继承利弊</h3><p><strong>好处</strong><br>提高了代码的复用性以及维护性，并且让类于类之间产生了关系(多态的前提)</p><p><strong>弊端</strong><br>开发追求高内聚 低耦合，所以类的耦合性增强了<br><strong>耦合:</strong> 类于类的关系    <strong>内聚:</strong> 就是自己完成某件事情的能力</p><h2 id="2-Object类"><a href="#2-Object类" class="headerlink" title="2.Object类"></a>2.Object类</h2><ol><li><p>一个类若没有声明它的父类，它默认的父类是object类</p></li><li><p>所有的java类的默认父类都是object类或间接继承object类</p></li><li><p>所有的java类都具有object类中的功能</p></li></ol><h2 id="3-方法重写"><a href="#3-方法重写" class="headerlink" title="3.方法重写"></a>3.方法重写</h2><h3 id="3-1核心意义"><a href="#3-1核心意义" class="headerlink" title="3.1核心意义"></a>3.1核心意义</h3><ol><li><p>子父类出现相同的方法(注意:返回值类型可以是子父类)</p></li><li><p>应用:当子类需要父类的功能，而功能主体子类有自己特有内容时，可以重写父类中的方法.</p></li></ol><h3 id="3-2注意事项"><a href="#3-2注意事项" class="headerlink" title="3.2注意事项"></a>3.2注意事项</h3><p><strong>方法本身</strong></p><ul><li>父类中private方法不能被重写</li><li>方法的形参列表要一致</li><li>子类重写父类方法时，访问权限比父类高&#x2F;一致</li></ul><p><strong>返回值类型</strong></p><ul><li>父类方法为void或基本数据类型，子重写方法一样</li><li>父类方法为引用数据类型时候，子重写方法一样&#x2F;这个引用数据类型的子类</li></ul><p><strong>后续</strong></p><ul><li>子类重写的方法抛出的异常类型，不能大于父类被重写的异常类型</li><li>子父类的同名同参数方法，要么声明static的(不是重写)，要么声明非static的(考虑重写</li></ul><h2 id="4-super关键词"><a href="#4-super关键词" class="headerlink" title="4.super关键词"></a>4.super关键词</h2><h3 id="4-1理解"><a href="#4-1理解" class="headerlink" title="4.1理解"></a>4.1理解</h3><p>super可以理解为:父类的<br>super可以调用:属性、方法、构造器</p><h3 id="4-2调用属性方法"><a href="#4-2调用属性方法" class="headerlink" title="4.2调用属性方法"></a>4.2调用属性方法</h3><ol><li><p>在子类的属性或方法中，通常使用super.属性&#x2F;方法，来显示父类中声明的属性&#x2F;方法(通常省略不写)</p></li><li><p>子类和父类定义同名属性时，需使用super.属性做区分</p></li><li><p>子类重写父类中的方法后,如果还想用父类被重写的方法，通过super.方法名调用重写前的方法</p></li></ol><font color = 'red'>注:子类继承父类就是为了使用父类属性，如果定义了同名属性是无意义的</font><h3 id="4-3调用构造器"><a href="#4-3调用构造器" class="headerlink" title="4.3调用构造器"></a>4.3调用构造器</h3><ol><li>子类构造器通过super(形参列表)的方式,调用父类声明的指定构造器</li><li>构造器的第一句必须是super(形参列表 )</li><li>this(形参列表)或super(形参列表)，在构造器中只能二选一</li><li>构造器的首行没有写的话，默认是父类的空参构造器:super()</li><li>类多多个构造器中，至少有一个构造器使用了”super(形参列表)”，去调用父类的构造器</li></ol><h2 id="5-子类对象实例化"><a href="#5-子类对象实例化" class="headerlink" title="5.子类对象实例化"></a>5.子类对象实例化</h2><p><strong>从结果上来看：(继承性)</strong></p><ul><li><p>子类继承了父类之后，就获得了父类中的属性和方法</p></li><li><p>创建子类的对象，在堆空间中，就会加载父类中声明的属性</p></li></ul><p><strong>从过程上来看</strong></p><ul><li><p>当我们通过子类的构造器去创建对象地时候，我们一定会直接或简介地去调用父类地构造器，进而调用父类地父类地构造器。。。，直到object类空参构造器为止。</p></li><li><p>正因为加载了父类地所有结构，所以才可以在内存中有父类地结构，子类对象才能去调用</p></li></ul><font color = 'red'>注:虽然创建子类对象时，调用了父类的构造器，但是自始至终只创建了一个对象，即为new的子类对象。</font>]]></content>
+    
+    
+    <categories>
+      
+      <category>JavaSE</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>面向对象</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>git部署的常见问题</title>
     <link href="/2022/04/04/git%E9%83%A8%E7%BD%B2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
     <url>/2022/04/04/git%E9%83%A8%E7%BD%B2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</url>
@@ -123,31 +148,6 @@
   
   
   <entry>
-    <title>类与对象</title>
-    <link href="/2022/03/26/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/"/>
-    <url>/2022/03/26/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/</url>
-    
-    <content type="html"><![CDATA[<h2 id="1-核心思想"><a href="#1-核心思想" class="headerlink" title="1.核心思想"></a>1.核心思想</h2><h3 id="核心"><a href="#核心" class="headerlink" title="核心"></a>核心</h3><ol><li>类及类的成员：属性、方法、构造器；代码块、内部类</li><li>三大特征：封装性(encapsulation) 继承性(inheritance) 多态性(polymorphism)  抽象性(abstract)</li><li>关键词：static this super final interface package import sychronized等等</li></ol><h3 id="思想特点"><a href="#思想特点" class="headerlink" title="思想特点"></a>思想特点</h3><ol><li>是一种更符合我们习惯思想的思想可以将复杂的事情简单化<br>  把我们从执行者变成了指挥者（角色发生了转换）</li><li>开发：就是不断地创建对象，使用对象，指挥对象做事情</li><li>设计：其实就是在管理和维护对象之间的关系</li></ol><h3 id="万事万物皆对象"><a href="#万事万物皆对象" class="headerlink" title="万事万物皆对象"></a>万事万物皆对象</h3><p>  Java语言范畴中，把功能，结构等等封装到类里面，再通过类的实例化，来调用具体的功能或者结构。<br>  涉及到Java和前端html，和后端数据库交互时，前后端的结构再Java层面交互时，都体现为类或对象。</p><h2 id="2-类与对象概述"><a href="#2-类与对象概述" class="headerlink" title="2.类与对象概述"></a>2.类与对象概述</h2><h3 id="类与对象概述"><a href="#类与对象概述" class="headerlink" title="类与对象概述"></a>类与对象概述</h3><p>  首先通过写一个类，然后在类里面不断地去增加属性和方法，并不断的去完善它。<br>  然后需要用这个类的时候只需去创建它的对象，然后调用里面写好的方法和属性即可。<br>   属性&#x3D;成员变量&#x3D;field&#x3D;域<br>   方法&#x3D;成员方法&#x3D;函数&#x3D;method<br>   创建类的对象&#x3D;类的实例化</p><h3 id="类和对象的使用"><a href="#类和对象的使用" class="headerlink" title="类和对象的使用"></a>类和对象的使用</h3><ol><li>创建类，设计类的成员</li><li>创建类的对象</li><li>通过对象.属性&#x2F;对象.方法调用对象的结构</li></ol><h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span>&#123;<br>  student = <span class="hljs-keyword">new</span> <span class="hljs-title class_">student</span>();<br>  s.age=<span class="hljs-number">17</span>;<br>  s.study();<br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">student</span>&#123;<br>  <span class="hljs-type">int</span> age;<br>  <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">study</span><span class="hljs-params">()</span>&#123;<br>    System.out.println(<span class="hljs-string">&quot;study happy&quot;</span>);<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="3-属性与局部变量对比"><a href="#3-属性与局部变量对比" class="headerlink" title="3.属性与局部变量对比"></a>3.属性与局部变量对比</h2><ol><li>在类中声明的位置不同<ul><li>成:声明在在类中{}内</li><li>局:声明在方法内、方法形参、代码块、构造器形参、构造器内部的变量</li></ul></li><li>权限修饰不同(public,protected,private,缺省(即默认))<ul><li>成:可使用权限修饰符</li><li>局:不可用权限修饰符</li></ul></li><li>初始化不同<ul><li>成:有默认初始化值</li><li>局:没有默认初始化值,必须定义 赋值 然后才能使用</li></ul></li><li>在内存中的位置不同<ul><li>成:在堆内存(成员变量属于对象,对象进堆内存)</li><li>局:在栈内存(局部变量属于方法,方法进栈内存)</li></ul></li><li>生命周期不同<ul><li>成:随着对象的创建而存在,对象的消失而消失</li><li>局:随着方法的调用而存在,方法的调用完毕而消失</li></ul></li></ol><h2 id="4-静态与成员变量对比"><a href="#4-静态与成员变量对比" class="headerlink" title="4.静态与成员变量对比"></a>4.静态与成员变量对比</h2><ol><li>所属不同<ul><li>静:属于类,所以也称类变量</li><li>成:属于对象,所以也称(实例&#x2F;对象变量)</li></ul></li><li>内存中位置不同<ul><li>静:方法区的静态区.</li><li>成:堆内存.</li></ul></li><li>内存出现时间不同<ul><li>静:随着类的加载而加载,随着类的消失而消失</li><li>成:随着对象的创立而存在,随着对象的消失而消失</li></ul></li><li>调用不同<ul><li>静:可以通过类名调用,也可以通过对象调用</li><li>成:只能通过对象名调用</li></ul></li></ol><h2 id="5-匿名对象"><a href="#5-匿名对象" class="headerlink" title="5.匿名对象"></a>5.匿名对象</h2><h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul><li>调用方法仅仅是调用一次的时候</li><li>好处：节省代码</li><li>调用多次不适合.匿名对象调用完毕就是垃圾.可以被垃圾回收器回收。</li><li>匿名对象可以作为实际参数传递。</li><li>匿名对象可以调用属性，但是没有意义，应为调用后就变成垃圾</li><li>如果有需要还是用有名对象</li><li>方法，循环，判断语句同样使用在面向对象中</li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>JavaSE</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>面向对象</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>通过git部署代码到GitHub</title>
     <link href="/2022/03/26/%E9%80%9A%E8%BF%87git%E9%83%A8%E7%BD%B2%E4%BB%A3%E7%A0%81%E5%88%B0GitHub/"/>
     <url>/2022/03/26/%E9%80%9A%E8%BF%87git%E9%83%A8%E7%BD%B2%E4%BB%A3%E7%A0%81%E5%88%B0GitHub/</url>
@@ -165,6 +165,31 @@
     <tags>
       
       <tag>git</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>类与对象</title>
+    <link href="/2022/03/26/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/"/>
+    <url>/2022/03/26/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/</url>
+    
+    <content type="html"><![CDATA[<h2 id="1-核心思想"><a href="#1-核心思想" class="headerlink" title="1.核心思想"></a>1.核心思想</h2><h3 id="核心"><a href="#核心" class="headerlink" title="核心"></a>核心</h3><ol><li>类及类的成员：属性、方法、构造器；代码块、内部类</li><li>三大特征：封装性(encapsulation) 继承性(inheritance) 多态性(polymorphism)  抽象性(abstract)</li><li>关键词：static this super final interface package import sychronized等等</li></ol><h3 id="思想特点"><a href="#思想特点" class="headerlink" title="思想特点"></a>思想特点</h3><ol><li>是一种更符合我们习惯思想的思想可以将复杂的事情简单化<br>  把我们从执行者变成了指挥者（角色发生了转换）</li><li>开发：就是不断地创建对象，使用对象，指挥对象做事情</li><li>设计：其实就是在管理和维护对象之间的关系</li></ol><h3 id="万事万物皆对象"><a href="#万事万物皆对象" class="headerlink" title="万事万物皆对象"></a>万事万物皆对象</h3><p>  Java语言范畴中，把功能，结构等等封装到类里面，再通过类的实例化，来调用具体的功能或者结构。<br>  涉及到Java和前端html，和后端数据库交互时，前后端的结构再Java层面交互时，都体现为类或对象。</p><h2 id="2-类与对象概述"><a href="#2-类与对象概述" class="headerlink" title="2.类与对象概述"></a>2.类与对象概述</h2><h3 id="类与对象概述"><a href="#类与对象概述" class="headerlink" title="类与对象概述"></a>类与对象概述</h3><p>  首先通过写一个类，然后在类里面不断地去增加属性和方法，并不断的去完善它。<br>  然后需要用这个类的时候只需去创建它的对象，然后调用里面写好的方法和属性即可。<br>   属性&#x3D;成员变量&#x3D;field&#x3D;域<br>   方法&#x3D;成员方法&#x3D;函数&#x3D;method<br>   创建类的对象&#x3D;类的实例化</p><h3 id="类和对象的使用"><a href="#类和对象的使用" class="headerlink" title="类和对象的使用"></a>类和对象的使用</h3><ol><li>创建类，设计类的成员</li><li>创建类的对象</li><li>通过对象.属性&#x2F;对象.方法调用对象的结构</li></ol><h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span>&#123;<br>  student = <span class="hljs-keyword">new</span> <span class="hljs-title class_">student</span>();<br>  s.age=<span class="hljs-number">17</span>;<br>  s.study();<br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">student</span>&#123;<br>  <span class="hljs-type">int</span> age;<br>  <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">study</span><span class="hljs-params">()</span>&#123;<br>    System.out.println(<span class="hljs-string">&quot;study happy&quot;</span>);<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="3-属性与局部变量对比"><a href="#3-属性与局部变量对比" class="headerlink" title="3.属性与局部变量对比"></a>3.属性与局部变量对比</h2><ol><li>在类中声明的位置不同<ul><li>成:声明在在类中{}内</li><li>局:声明在方法内、方法形参、代码块、构造器形参、构造器内部的变量</li></ul></li><li>权限修饰不同(public,protected,private,缺省(即默认))<ul><li>成:可使用权限修饰符</li><li>局:不可用权限修饰符</li></ul></li><li>初始化不同<ul><li>成:有默认初始化值</li><li>局:没有默认初始化值,必须定义 赋值 然后才能使用</li></ul></li><li>在内存中的位置不同<ul><li>成:在堆内存(成员变量属于对象,对象进堆内存)</li><li>局:在栈内存(局部变量属于方法,方法进栈内存)</li></ul></li><li>生命周期不同<ul><li>成:随着对象的创建而存在,对象的消失而消失</li><li>局:随着方法的调用而存在,方法的调用完毕而消失</li></ul></li></ol><h2 id="4-静态与成员变量对比"><a href="#4-静态与成员变量对比" class="headerlink" title="4.静态与成员变量对比"></a>4.静态与成员变量对比</h2><ol><li>所属不同<ul><li>静:属于类,所以也称类变量</li><li>成:属于对象,所以也称(实例&#x2F;对象变量)</li></ul></li><li>内存中位置不同<ul><li>静:方法区的静态区.</li><li>成:堆内存.</li></ul></li><li>内存出现时间不同<ul><li>静:随着类的加载而加载,随着类的消失而消失</li><li>成:随着对象的创立而存在,随着对象的消失而消失</li></ul></li><li>调用不同<ul><li>静:可以通过类名调用,也可以通过对象调用</li><li>成:只能通过对象名调用</li></ul></li></ol><h2 id="5-匿名对象"><a href="#5-匿名对象" class="headerlink" title="5.匿名对象"></a>5.匿名对象</h2><h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul><li>调用方法仅仅是调用一次的时候</li><li>好处：节省代码</li><li>调用多次不适合.匿名对象调用完毕就是垃圾.可以被垃圾回收器回收。</li><li>匿名对象可以作为实际参数传递。</li><li>匿名对象可以调用属性，但是没有意义，应为调用后就变成垃圾</li><li>如果有需要还是用有名对象</li><li>方法，循环，判断语句同样使用在面向对象中</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>JavaSE</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>面向对象</tag>
       
     </tags>
     
