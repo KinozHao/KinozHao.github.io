@@ -16,23 +16,23 @@
   <meta name="author" content="Kinoz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1.前提条件 注册Github 下载GIT工具  2.创建Github仓库 3.开始部署以管理员命令打开git窗口可预防后期一些错误,但是需要手动输入路径也可以在文件夹中右击选择git bash here 1234567891011121314151617获取磁盘位置cd &#x2F;d&#x2F;phpdoc初始化git工具git init本地文件添加到Gitgit add .文件备注git commit -m &amp;">
+    <meta name="description" content="1.什么是继承性1.1继承体现 继承(extends)让类与类之间产生关系,子父类关系 Animal是父类，cat和dog都是子类 书写格式 class cat extends Animal{}  1.2代码体现1234567891011121314151617181920212223242526272829303132333435主类class MainMethod &amp;#123;    publ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="通过git部署代码到GitHub">
-<meta property="og:url" content="http://example.com/2022/03/26/%E9%80%9A%E8%BF%87git%E9%83%A8%E7%BD%B2%E4%BB%A3%E7%A0%81%E5%88%B0GitHub/index.html">
+<meta property="og:title" content="面向对象:继承性">
+<meta property="og:url" content="http://example.com/2022/04/05/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BB%A7%E6%89%BF%E6%80%A7/index.html">
 <meta property="og:site_name" content="小郝博客 - Hexo博客">
-<meta property="og:description" content="1.前提条件 注册Github 下载GIT工具  2.创建Github仓库 3.开始部署以管理员命令打开git窗口可预防后期一些错误,但是需要手动输入路径也可以在文件夹中右击选择git bash here 1234567891011121314151617获取磁盘位置cd &#x2F;d&#x2F;phpdoc初始化git工具git init本地文件添加到Gitgit add .文件备注git commit -m &amp;">
+<meta property="og:description" content="1.什么是继承性1.1继承体现 继承(extends)让类与类之间产生关系,子父类关系 Animal是父类，cat和dog都是子类 书写格式 class cat extends Animal{}  1.2代码体现1234567891011121314151617181920212223242526272829303132333435主类class MainMethod &amp;#123;    publ">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/git.png">
-<meta property="article:published_time" content="2022-03-26T02:22:09.000Z">
-<meta property="article:modified_time" content="2022-03-31T10:46:53.688Z">
+<meta property="og:image" content="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/javainherit.png">
+<meta property="article:published_time" content="2022-04-05T13:50:30.000Z">
+<meta property="article:modified_time" content="2022-04-05T14:26:45.625Z">
 <meta property="article:author" content="Kinoz">
-<meta property="article:tag" content="git">
+<meta property="article:tag" content="面向对象">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/git.png">
+<meta name="twitter:image" content="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/javainherit.png">
   
   
-  <title>通过git部署代码到GitHub - 小郝博客 - Hexo博客</title>
+  <title>面向对象:继承性 - 小郝博客 - Hexo博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -178,7 +178,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="通过git部署代码到GitHub">
+            <span class="h2" id="subtitle" title="面向对象:继承性">
               
             </span>
 
@@ -188,8 +188,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-03-26 10:22" pubdate>
-        2022年3月26日 上午
+      <time datetime="2022-04-05 21:50" pubdate>
+        2022年4月5日 晚上
       </time>
     </span>
   
@@ -199,7 +199,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      419 字
+      1.9k 字
     </span>
   
 
@@ -208,7 +208,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4 分钟
+      17 分钟
     </span>
   
 
@@ -237,20 +237,93 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">通过git部署代码到GitHub</h1>
+            <h1 style="display: none">面向对象:继承性</h1>
             
             <div class="markdown-body">
-              <h3 id="1-前提条件"><a href="#1-前提条件" class="headerlink" title="1.前提条件"></a>1.前提条件</h3><ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/github">注册Github</a></li>
-<li><a target="_blank" rel="noopener" href="https://git-scm.com/">下载GIT工具</a></li>
-</ul>
-<h3 id="2-创建Github仓库"><a href="#2-创建Github仓库" class="headerlink" title="2.创建Github仓库"></a>2.创建Github仓库</h3><p><img src="https://s1.ax1x.com/2022/03/27/q0YAij.png" srcset="/img/loading.gif" lazyload alt="创建一个仓库"><br><img src="https://s1.ax1x.com/2022/03/27/q0YEJs.png" srcset="/img/loading.gif" lazyload alt="输入仓库的名字,点击creat repository即可"><br><img src="https://s1.ax1x.com/2022/03/27/q0YFoQ.png" srcset="/img/loading.gif" lazyload alt="仓库地址"></p>
-<h3 id="3-开始部署"><a href="#3-开始部署" class="headerlink" title="3.开始部署"></a>3.开始部署</h3><p>以管理员命令打开git窗口<br>可预防后期一些错误,但是需要手动输入路径<br>也可以在文件夹中右击选择git bash here<br><img src="https://s1.ax1x.com/2022/03/27/q0t5DK.png" srcset="/img/loading.gif" lazyload alt="管理员打开"><br><img src="https://s1.ax1x.com/2022/03/27/q0t4u6.png" srcset="/img/loading.gif" lazyload alt="文件夹内打开"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div></td><td class="code"><pre><code class="hljs java">获取磁盘位置<br>cd /d/phpdoc<br><br>初始化git工具<br>git init<br><br>本地文件添加到Git<br>git add .<br><br>文件备注<br>git commit -m <span class="hljs-string">&#x27;这里写备注&#x27;</span><br><br>上传仓库<br>git remote add origin 你的仓库地址<br><br>开始上传<br>git push -u origin master<br></code></pre></td></tr></table></figure>
-<p>最后可能会提示输入GitHub账号和密码,输入即可<br>也可以提前输入以下代码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">git config --global user.name <span class="hljs-string">&quot;你的GitHub名称&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;注册时候的email&quot;</span><br></code></pre></td></tr></table></figure>
-<p>更新仓库至需要执行第3&#x2F;4&#x2F;6的代码即可</p>
+              <h2 id="1-什么是继承性"><a href="#1-什么是继承性" class="headerlink" title="1.什么是继承性"></a>1.什么是继承性</h2><h3 id="1-1继承体现"><a href="#1-1继承体现" class="headerlink" title="1.1继承体现"></a>1.1继承体现</h3><ol>
+<li>继承(extends)让类与类之间产生关系,子父类关系</li>
+<li>Animal是父类，cat和dog都是子类</li>
+<li>书写格式 class cat extends Animal{}</li>
+</ol>
+<h3 id="1-2代码体现"><a href="#1-2代码体现" class="headerlink" title="1.2代码体现"></a>1.2代码体现</h3><figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></div></td><td class="code"><pre><code class="hljs java">主类<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MainMethod</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">dog</span> <span class="hljs-variable">d</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">dog</span>();<br>        d.color = <span class="hljs-string">&quot;black&quot;</span>;<br>        d.leg = <span class="hljs-number">4</span> ;<br>        d.eat();<br>        d.sleep();<br>    &#125;<br>&#125;<br><br>动物类<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">animals</span>&#123;<br>    String color;    <span class="hljs-comment">//动物的颜色</span><br>    <span class="hljs-type">int</span> leg; 		<span class="hljs-comment">//动物腿的个数</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">eat</span><span class="hljs-params">()</span>&#123;    <span class="hljs-comment">//吃饭的功能</span><br>         System.out.println(<span class="hljs-string">&quot;吃饭&quot;</span>);<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">sleep</span><span class="hljs-params">()</span>&#123;  <span class="hljs-comment">//睡觉的功能</span><br>         System.out.println(<span class="hljs-string">&quot;睡觉&quot;</span>);<br>    &#125;<br>&#125;<br><br>狗类<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">dog</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">animals</span>&#123;<br>    String color;<br>    <span class="hljs-type">int</span> leg;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">eat</span><span class="hljs-params">()</span>&#123;<br>         System.out.println(<span class="hljs-string">&quot;吃饭&quot;</span>);<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">sleep</span><span class="hljs-params">()</span>&#123;<br>         System.out.println(<span class="hljs-string">&quot;睡觉&quot;</span>);<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
 
+<h3 id="1-3继承核心"><a href="#1-3继承核心" class="headerlink" title="1.3继承核心"></a>1.3继承核心</h3><ol>
+<li>Java只支持单继承,不支持多继承</li>
+<li>Java支持多层继承(继承体系)</li>
+<li>子类继承父类就获得了父类所有的属性与方法</li>
+<li>父类的私有结构，子类依然可以继承，只是因为封装性的影响，不能直接调用父类的结构而已</li>
+<li>如果要看这个体系的所有功能用最底层的类创建对象</li>
+<li>如果想看这个体系的共性功能,看最顶层的类</li>
+</ol>
+<h3 id="1-3继承利弊"><a href="#1-3继承利弊" class="headerlink" title="1.3继承利弊"></a>1.3继承利弊</h3><p><strong>好处</strong><br>提高了代码的复用性以及维护性，并且让类于类之间产生了关系(多态的前提)</p>
+<p><strong>弊端</strong><br>开发追求高内聚 低耦合，所以类的耦合性增强了<br><strong>耦合:</strong> 类于类的关系    <strong>内聚:</strong> 就是自己完成某件事情的能力</p>
+<h2 id="2-Object类"><a href="#2-Object类" class="headerlink" title="2.Object类"></a>2.Object类</h2><ol>
+<li><p>一个类若没有声明它的父类，它默认的父类是object类</p>
+</li>
+<li><p>所有的java类的默认父类都是object类或间接继承object类</p>
+</li>
+<li><p>所有的java类都具有object类中的功能</p>
+</li>
+</ol>
+<h2 id="3-方法重写"><a href="#3-方法重写" class="headerlink" title="3.方法重写"></a>3.方法重写</h2><h3 id="3-1核心意义"><a href="#3-1核心意义" class="headerlink" title="3.1核心意义"></a>3.1核心意义</h3><ol>
+<li><p>子父类出现相同的方法(注意:返回值类型可以是子父类)</p>
+</li>
+<li><p>应用:当子类需要父类的功能，而功能主体子类有自己特有内容时，可以重写父类中的方法.</p>
+</li>
+</ol>
+<h3 id="3-2注意事项"><a href="#3-2注意事项" class="headerlink" title="3.2注意事项"></a>3.2注意事项</h3><p><strong>方法本身</strong></p>
+<ul>
+<li>父类中private方法不能被重写</li>
+<li>方法的形参列表要一致</li>
+<li>子类重写父类方法时，访问权限比父类高&#x2F;一致</li>
+</ul>
+<p><strong>返回值类型</strong></p>
+<ul>
+<li>父类方法为void或基本数据类型，子重写方法一样</li>
+<li>父类方法为引用数据类型时候，子重写方法一样&#x2F;这个引用数据类型的子类</li>
+</ul>
+<p><strong>后续</strong></p>
+<ul>
+<li>子类重写的方法抛出的异常类型，不能大于父类被重写的异常类型</li>
+<li>子父类的同名同参数方法，要么声明static的(不是重写)，要么声明非static的(考虑重写</li>
+</ul>
+<h2 id="4-super关键词"><a href="#4-super关键词" class="headerlink" title="4.super关键词"></a>4.super关键词</h2><h3 id="4-1理解"><a href="#4-1理解" class="headerlink" title="4.1理解"></a>4.1理解</h3><p>super可以理解为:父类的<br>super可以调用:属性、方法、构造器</p>
+<h3 id="4-2调用属性方法"><a href="#4-2调用属性方法" class="headerlink" title="4.2调用属性方法"></a>4.2调用属性方法</h3><ol>
+<li><p>在子类的属性或方法中，通常使用super.属性&#x2F;方法，来显示父类中声明的属性&#x2F;方法(通常省略不写)</p>
+</li>
+<li><p>子类和父类定义同名属性时，需使用super.属性做区分</p>
+</li>
+<li><p>子类重写父类中的方法后,如果还想用父类被重写的方法，通过super.方法名调用重写前的方法</p>
+</li>
+</ol>
+<font color = 'red'>
+注:子类继承父类就是为了使用父类属性，如果定义了同名属性是无意义的
+</font>
+
+<h3 id="4-3调用构造器"><a href="#4-3调用构造器" class="headerlink" title="4.3调用构造器"></a>4.3调用构造器</h3><ol>
+<li>子类构造器通过super(形参列表)的方式,调用父类声明的指定构造器</li>
+<li>构造器的第一句必须是super(形参列表 )</li>
+<li>this(形参列表)或super(形参列表)，在构造器中只能二选一</li>
+<li>构造器的首行没有写的话，默认是父类的空参构造器:super()</li>
+<li>类多多个构造器中，至少有一个构造器使用了”super(形参列表)”，去调用父类的构造器</li>
+</ol>
+<h2 id="5-子类对象实例化"><a href="#5-子类对象实例化" class="headerlink" title="5.子类对象实例化"></a>5.子类对象实例化</h2><p><strong>从结果上来看：(继承性)</strong></p>
+<ul>
+<li><p>子类继承了父类之后，就获得了父类中的属性和方法</p>
+</li>
+<li><p>创建子类的对象，在堆空间中，就会加载父类中声明的属性</p>
+</li>
+</ul>
+<p><strong>从过程上来看</strong></p>
+<ul>
+<li><p>当我们通过子类的构造器去创建对象地时候，我们一定会直接或简介地去调用父类地构造器，进而调用父类地父类地构造器。。。，直到object类空参构造器为止。</p>
+</li>
+<li><p>正因为加载了父类地所有结构，所以才可以在内存中有父类地结构，子类对象才能去调用</p>
+</li>
+</ul>
+<font color = 'red'>
+注:虽然创建子类对象时，调用了父类的构造器，但是自始至终只创建了一个对象，即为new的子类对象。
+</font>
             </div>
             <hr>
             <div>
@@ -259,7 +332,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/Tools/">Tools</a>
+                      <a class="hover-with-bg" href="/categories/JavaSE/">JavaSE</a>
                     
                   </div>
                 
@@ -267,7 +340,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/git/">git</a>
+                      <a class="hover-with-bg" href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a>
                     
                   </div>
                 
@@ -284,9 +357,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/03/28/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%B0%81%E8%A3%85%E6%80%A7/">
+                      <a href="/2022/04/08/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%A4%9A%E6%80%81%E6%80%A7/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">面向对象:封装性</span>
+                        <span class="hidden-mobile">面向对象:多态性</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -294,8 +367,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/03/26/%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/">
-                        <span class="hidden-mobile">方法总结</span>
+                      <a href="/2022/04/04/Git%E4%BD%BF%E7%94%A8/git%E9%83%A8%E7%BD%B2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
+                        <span class="hidden-mobile">git部署的常见问题</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

@@ -16,23 +16,23 @@
   <meta name="author" content="Kinoz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1.前言git在部署中经常莫名其妙出现一些问题，明明环境什么都设置的好好的，但是就是push不上，所以做个合集来总计一下目前遇到的问题,以及网上能搜到的有效的解决方案。 2.问题及解决2.1README.MD错误代码:! [rejected] master -&gt; master (fetch first) error: failed to push some refs to ‘ 。。。’  原">
+    <meta name="description" content="1.方法核心核心概述 方法一般由权限修饰符,返回值类型,方法名,形参,方法体组成123456书写格式&amp;#123;	权限修饰符  返回值类型  方法名(形参(即局部变量))&amp;#123;			方法体	&amp;#125;&amp;#125; 形参与返回值类型可有可无根据经验或者题目要求 有返回值的情况下需要使用return关键词 写好的方法通过类创建对象去调用使用即可  代码实现12345678910111213pu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git部署的常见问题">
-<meta property="og:url" content="http://example.com/2022/04/04/git%E9%83%A8%E7%BD%B2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="方法总结">
+<meta property="og:url" content="http://example.com/2022/03/26/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="小郝博客 - Hexo博客">
-<meta property="og:description" content="1.前言git在部署中经常莫名其妙出现一些问题，明明环境什么都设置的好好的，但是就是push不上，所以做个合集来总计一下目前遇到的问题,以及网上能搜到的有效的解决方案。 2.问题及解决2.1README.MD错误代码:! [rejected] master -&gt; master (fetch first) error: failed to push some refs to ‘ 。。。’  原">
+<meta property="og:description" content="1.方法核心核心概述 方法一般由权限修饰符,返回值类型,方法名,形参,方法体组成123456书写格式&amp;#123;	权限修饰符  返回值类型  方法名(形参(即局部变量))&amp;#123;			方法体	&amp;#125;&amp;#125; 形参与返回值类型可有可无根据经验或者题目要求 有返回值的情况下需要使用return关键词 写好的方法通过类创建对象去调用使用即可  代码实现12345678910111213pu">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/git.png">
-<meta property="article:published_time" content="2022-04-04T02:00:09.000Z">
-<meta property="article:modified_time" content="2022-04-04T14:31:47.031Z">
+<meta property="og:image" content="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/javasss.png">
+<meta property="article:published_time" content="2022-03-26T02:22:09.000Z">
+<meta property="article:modified_time" content="2022-03-31T10:47:23.688Z">
 <meta property="article:author" content="Kinoz">
-<meta property="article:tag" content="git">
+<meta property="article:tag" content="面向对象">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/git.png">
+<meta name="twitter:image" content="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/javasss.png">
   
   
-  <title>git部署的常见问题 - 小郝博客 - Hexo博客</title>
+  <title>方法总结 - 小郝博客 - Hexo博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -178,7 +178,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="git部署的常见问题">
+            <span class="h2" id="subtitle" title="方法总结">
               
             </span>
 
@@ -188,8 +188,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-04-04 10:00" pubdate>
-        2022年4月4日 上午
+      <time datetime="2022-03-26 10:22" pubdate>
+        2022年3月26日 上午
       </time>
     </span>
   
@@ -199,7 +199,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      937 字
+      1.5k 字
     </span>
   
 
@@ -208,7 +208,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      8 分钟
+      13 分钟
     </span>
   
 
@@ -237,83 +237,74 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">git部署的常见问题</h1>
+            <h1 style="display: none">方法总结</h1>
             
             <div class="markdown-body">
-              <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>git在部署中经常莫名其妙出现一些问题，明明环境什么都设置的好好的，但是就是push不上，所以做个合集来总计一下目前遇到的问题,以及网上能搜到的有效的解决方案。</p>
-<h2 id="2-问题及解决"><a href="#2-问题及解决" class="headerlink" title="2.问题及解决"></a>2.问题及解决</h2><h3 id="2-1README-MD"><a href="#2-1README-MD" class="headerlink" title="2.1README.MD"></a>2.1README.MD</h3><p><strong>错误代码:</strong><br><font color= red><br>! [rejected] master -&gt; master (fetch first) error: failed to push some refs to ‘ 。。。’ </font></p>
-<p><strong>原因:</strong><br>github中的README.md文件不在本地代码目录中，可以通过如下命令进行代码合并</p>
-<p><strong>解决办法:</strong></p>
-<figure class="highlight ada"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs ada">git pull <span class="hljs-comment">--rebase origin master</span><br></code></pre></td></tr></table></figure>
+              <h2 id="1-方法核心"><a href="#1-方法核心" class="headerlink" title="1.方法核心"></a>1.方法核心</h2><h3 id="核心概述"><a href="#核心概述" class="headerlink" title="核心概述"></a>核心概述</h3><ol>
+<li>方法一般由权限修饰符,返回值类型,方法名,形参,方法体组成<figure class="highlight dust"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><pre><code class="hljs dust"><span class="language-xml">书写格式</span><br><span class="language-xml"></span><span class="hljs-template-variable">&#123;</span><br><span class="hljs-template-variable">	权限修饰符  返回值类型  方法名(形参(即局部变量))&#123;</span><br><span class="hljs-template-variable">			方法体</span><br><span class="hljs-template-variable">	&#125;</span><span class="language-xml"></span><br><span class="language-xml">&#125;</span><br></code></pre></td></tr></table></figure></li>
+<li>形参与返回值类型可有可无根据经验或者题目要求</li>
+<li>有返回值的情况下需要使用return关键词</li>
+<li>写好的方法通过类创建对象去调用使用即可</li>
+</ol>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span>&#123;<span class="hljs-comment">//无形参</span><br>	System.out.println(<span class="hljs-string">&quot;justdoit.&quot;</span>);<br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">sleep</span><span class="hljs-params">(<span class="hljs-type">int</span> time)</span>&#123;<span class="hljs-comment">//有形参 无返回值</span><br>	System.out.println(<span class="hljs-string">&quot;sleep&quot;</span>+time+<span class="hljs-string">&quot;minutes&quot;</span>);<br>&#125;<br><span class="hljs-keyword">public</span> String <span class="hljs-title function_">getColor</span><span class="hljs-params">()</span>&#123;<span class="hljs-comment">//有返回值 需要return</span><br>	<span class="hljs-keyword">return</span>  color;<br>&#125;<br><span class="hljs-keyword">public</span> String <span class="hljs-title function_">getNation</span><span class="hljs-params">(String nation)</span>&#123; <span class="hljs-comment">//有返回值且有形参 需要return</span><br>	String infos=<span class="hljs-string">&quot;Tomnationis:&quot;</span>+nation;<br>	<span class="hljs-keyword">return</span>  infos;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-
-<h3 id="2-2remote-rejected"><a href="#2-2remote-rejected" class="headerlink" title="2.2remote rejected"></a>2.2remote rejected</h3><p><strong>错误代码:</strong><br><font color= red><br>! [remote rejected] master -&gt; master (pre-receive hook declined)<br></font></p>
-<p><strong>原因:</strong><br>项目的setting中master是受保护的项目，所以无法推送，</p>
-<p><strong>解决办法:</strong><br>修改protected的设置，或新建一个分支，推送到自己的分支上<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/cppeterpan/p/7289266.html">关于此问题的具体解决办法</a></p>
-<h3 id="2-3everything-up-to-date"><a href="#2-3everything-up-to-date" class="headerlink" title="2.3everything up-to-date"></a>2.3everything up-to-date</h3><p><strong>错误代码:</strong><br><font color= red>everything up-to-date</font></p>
-<p><strong>原因:</strong><br>git提交改动到缓存，要push的时候不会将本地所有的分支都push掉，所以出现这个问题。那么我们就需要新建分支提交改动然后合并分支。</p>
-<p><strong>解决办法:</strong></p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li>方法使用中，可以调用当前类的属性或方法</li>
+<li>特殊：方法自己调用自己：递归方法</li>
+<li>方法中不可再定义其他方法</li>
+</ul>
+<h2 id="2-重载机制"><a href="#2-重载机制" class="headerlink" title="2.重载机制"></a>2.重载机制</h2><h3 id="重载概述"><a href="#重载概述" class="headerlink" title="重载概述"></a>重载概述</h3><p>方法名相同,与返回值类型无关(构造方法没有返回值),参数个数和参数类型不同即可</p>
+<h3 id="注意事项-1"><a href="#注意事项-1" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
+<li>如果我们没有给出构造方法,系统将会自动一共一个无参构造方法</li>
+<li>如果我们给出了构造方法,系统将不再提供默认的无参构造方法</li>
+<li>注意:这个时候,如果我们还想使用无参构造方法,就必须自己给出,建议永远自己给出无参构造方法</li>
+</ol>
+<h2 id="3-varargs机制"><a href="#3-varargs机制" class="headerlink" title="3.varargs机制"></a>3.varargs机制</h2><p>###即可变个数形参的方法</p>
+<ul>
+<li>允许直接定义能和多个实参相匹配的形参</li>
+<li>Void show(形参类型 形参名称) &#x2F;&#x2F;前</li>
+<li>Void show(形参类型[ ]形参名称) &#x2F;&#x2F;前</li>
+<li>Void show(形参类型…形参名称) &#x2F;&#x2F;后<br>####注:</li>
+</ul>
 <ol>
-<li>新建一个分支</li>
+<li>方法里只能写一个varargs机制的形参</li>
+<li>若存在两个形参varargs机制形参要写到后面</li>
+<li>书写格式中形参类型…形参名称和形参类型[ ]形参名称功能一样只能存在一个<br>###代码实现<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">Void <span class="hljs-title function_">show</span><span class="hljs-params">(String b,String...aaa)</span>&#123;&#125;<span class="hljs-comment">//正确写法，varargs机制必须在最后</span><br>Void <span class="hljs-title function_">show</span><span class="hljs-params">(String...b,String...aaa)</span>&#123;&#125;<span class="hljs-comment">//错误写法只能写一个varargs机制</span><br></code></pre></td></tr></table></figure>
+<h2 id="3-值传递机制"><a href="#3-值传递机制" class="headerlink" title="3.值传递机制"></a>3.值传递机制</h2>###变量的值传递</li>
 </ol>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">git branch newbranch</span><br></code></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>检查这条命令是否创建成功</li>
-</ol>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">git branch</span><br></code></pre></td></tr></table></figure>
-
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">newbranch<br><br>*<span class="hljs-keyword">master</span><br><br><span class="hljs-title">这样就创建成功了，前面的*代表当前分支。</span><br></code></pre></td></tr></table></figure>
-
-
-
-<ol start="3">
-<li>切换分支</li>
-</ol>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">git checkout newbranch</span><br></code></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>改动提交新的分支</li>
-</ol>
-<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">git <span class="hljs-keyword">add</span> .<br><br>git <span class="hljs-keyword">commit</span> -m &quot;备注&quot;<br></code></pre></td></tr></table></figure>
-
-<ol start="5">
-<li>检查提交情况</li>
-</ol>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">git status</span><br></code></pre></td></tr></table></figure>
-
-<ol start="6">
-<li>切换到主分支</li>
-</ol>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">git checkout <span class="hljs-literal">master</span><br></code></pre></td></tr></table></figure>
-
-<ol start="5">
-<li>合并分支</li>
-</ol>
-<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs haxe">git merge <span class="hljs-keyword">new</span><span class="hljs-type">branch</span><br><br>合并分支可能产生冲突这是正常的，虽然我们这是新建的分支不会产生冲突，但还是在这里记录下。可以用<br><br>git diff<br><br>来查看产生冲突的文件，然后做对应的修改再提交一次就可以了。<br></code></pre></td></tr></table></figure>
-
-<ol start="6">
-<li>Push到GitHub</li>
-</ol>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima">git <span class="hljs-built_in">push</span> -u <span class="hljs-built_in">origin</span> master<br></code></pre></td></tr></table></figure>
-
-<ol start="7">
-<li>删除创建的分支</li>
-</ol>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">git branch -D newbranch</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="3-参考文章"><a href="#3-参考文章" class="headerlink" title="3.参考文章"></a>3.参考文章</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43264399/article/details/87350219">CSDN-way-up博主文章</a></p>
+<ul>
+<li>基本数据类型：赋值的为变量保存的数据值</li>
+<li>引用数据类型：赋值的为变量保存的地址值</li>
+</ul>
+<p>###方法的值传递</p>
+<ul>
+<li>形参，方法定义时，声明在()里面的</li>
+<li>实参，方法调用时，实际传递给形参的数据<br>####值传递机制：</li>
+<li>如果参数为基本数据类型，此时实参给形参的是实参真实存储的数据值</li>
+<li>如果参数为引用数据类型，此时实参赋值给形参的是实参真实存储的地址值</li>
+</ul>
+<h2 id="4-递归方法"><a href="#4-递归方法" class="headerlink" title="4.递归方法"></a>4.递归方法</h2><ul>
+<li>即方法调用自己本身</li>
+<li>递归方法包含了一种隐式的循环，可以重复的去执行代码,但这种重复不需要循环控制<br>递归方法一定是向已知的方向递归，否则的话就会变成了无穷递归，类似于死循环<h3 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java">求<span class="hljs-number">100</span>以内数的和<br>Public <span class="hljs-type">int</span> <span class="hljs-title function_">dgsum</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span>&#123;<br>   <span class="hljs-keyword">if</span>(n==<span class="hljs-number">1</span>)&#123;<br>   return1;<br>&#125;<span class="hljs-keyword">else</span>&#123;<br>   <span class="hljs-keyword">return</span> n + dgsum(n-<span class="hljs-number">1</span>);<br>&#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/JavaSE/">JavaSE</a>
+                    
+                  </div>
+                
                 
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/git/">git</a>
+                      <a class="hover-with-bg" href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a>
                     
                   </div>
                 
@@ -330,9 +321,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/04/05/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BB%A7%E6%89%BF%E6%80%A7/">
+                      <a href="/2022/03/26/Git%E4%BD%BF%E7%94%A8/%E9%80%9A%E8%BF%87git%E9%83%A8%E7%BD%B2%E4%BB%A3%E7%A0%81%E5%88%B0GitHub/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">面向对象:继承性</span>
+                        <span class="hidden-mobile">通过git部署代码到GitHub</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -340,8 +331,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/04/01/%E9%80%9A%E8%BF%87Hexo%E5%92%8CGithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
-                        <span class="hidden-mobile">通过Hexo和Github搭建个人博客</span>
+                      <a href="/2022/03/26/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/">
+                        <span class="hidden-mobile">类与对象</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
