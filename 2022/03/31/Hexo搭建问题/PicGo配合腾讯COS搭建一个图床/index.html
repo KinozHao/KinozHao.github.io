@@ -69,7 +69,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading2.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -242,11 +242,11 @@
             <div class="markdown-body">
               <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>博客搭建好了，但是写文章一直用本地存图片不是个很好的办法<br>免费的图床延迟太高，信息安全也是个问题，准备自己搞个图床。<br>网上搜了搜发现开源项目PicGo不错，覆盖了常见的对象存储的几个平台。<br>下面以腾讯云COS为例</p>
 <h2 id="2-准备"><a href="#2-准备" class="headerlink" title="2.准备"></a>2.准备</h2><p>腾讯云官网 <a target="_blank" rel="noopener" href="https://cloud.tencent.com/">cloud.tencent.com</a><br>PicGo Github项目 <a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo">PicGo</a><br>下载方式去看Github上面的README.MD就行，可以用山东大学的镜像去下载，速度比GitHub快</p>
-<h2 id="3-腾讯云配置"><a href="#3-腾讯云配置" class="headerlink" title="3.腾讯云配置"></a>3.腾讯云配置</h2><p><img src="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/%E6%8E%A7%E5%88%B6%E5%8F%B0.png" srcset="/img/loading.gif" lazyload alt="1 在控制台中找到对象存储选项点进去进到控制台"></p>
-<p><img src="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/%E5%88%9B%E5%BB%BA%E5%AD%98%E5%82%A8%E6%A1%B6.png" srcset="/img/loading.gif" lazyload alt="2 点击左边的存储桶列表进到具体页面点击创建存储桶"></p>
-<p><img src="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/%E5%88%9B%E5%BB%BA.png" srcset="/img/loading.gif" lazyload alt="3 名称栏取个名字，访问权限选择公有读私有写，下面一路无脑下一步就行这样就创建好了一个存储桶"></p>
+<h2 id="3-腾讯云配置"><a href="#3-腾讯云配置" class="headerlink" title="3.腾讯云配置"></a>3.腾讯云配置</h2><p><img src="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/%E6%8E%A7%E5%88%B6%E5%8F%B0.png" srcset="/img/loading2.gif" lazyload alt="1 在控制台中找到对象存储选项点进去进到控制台"></p>
+<p><img src="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/%E5%88%9B%E5%BB%BA%E5%AD%98%E5%82%A8%E6%A1%B6.png" srcset="/img/loading2.gif" lazyload alt="2 点击左边的存储桶列表进到具体页面点击创建存储桶"></p>
+<p><img src="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/%E5%88%9B%E5%BB%BA.png" srcset="/img/loading2.gif" lazyload alt="3 名称栏取个名字，访问权限选择公有读私有写，下面一路无脑下一步就行这样就创建好了一个存储桶"></p>
 <h2 id="4-PicGo部署"><a href="#4-PicGo部署" class="headerlink" title="4.PicGo部署"></a>4.PicGo部署</h2><ol>
-<li><p>打开PicGo选择图床设置里面的腾讯云COS,COS版本选择V5<br><img src="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/picgoset.png" srcset="/img/loading.gif" lazyload alt="PICGo界面"></p>
+<li><p>打开PicGo选择图床设置里面的腾讯云COS,COS版本选择V5<br><img src="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/picgoset.png" srcset="/img/loading2.gif" lazyload alt="PICGo界面"></p>
 </li>
 <li><p>secretld和secreKey去腾讯云对象存储的控制台左边翻到最下面，有一个密钥管理点开会提示你去去访问密钥点进去，然后新建一个密钥会有对应的secretld和secreKey赋值粘贴到PicGo就行了</p>
 </li>
@@ -398,9 +398,9 @@
           >
             
               <span style="visibility: hidden; width: 0">|</span>
-              <img src="/img/police_beian.png" srcset="/img/loading.gif" lazyload alt="police-icon"/>
+              <img src="/img/police_beian.png" srcset="/img/loading2.gif" lazyload alt="police-icon"/>
             
-            <span>豫公网安备12345678号</span>
+            <span>苏公网安备 32081202000295号</span>
           </a>
         </span>
       
