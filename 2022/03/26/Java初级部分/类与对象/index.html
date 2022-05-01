@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/javasss.png">
 <meta property="article:published_time" content="2022-03-26T02:22:09.000Z">
-<meta property="article:modified_time" content="2022-05-01T12:23:44.807Z">
+<meta property="article:modified_time" content="2022-05-01T14:02:23.142Z">
 <meta property="article:author" content="Kinoz">
 <meta property="article:tag" content="面向对象">
 <meta name="twitter:card" content="summary_large_image">
@@ -199,7 +199,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.4k 字
+      2.2k 字
     </span>
   
 
@@ -208,7 +208,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      12 分钟
+      19 分钟
     </span>
   
 
@@ -317,7 +317,16 @@
 <li>如果有需要还是用有名对象</li>
 <li>方法，循环，判断语句同样使用在面向对象中</li>
 </ul>
+<h2 id="6-static关键词"><a href="#6-static关键词" class="headerlink" title="6.static关键词"></a>6.static关键词</h2><h3 id="6-1形象理解"><a href="#6-1形象理解" class="headerlink" title="6.1形象理解"></a>6.1形象理解</h3><p>每个中国人的国籍都是中国,那么中国这个属性就可以定义为静态的</p>
+<h3 id="6-2static概述"><a href="#6-2static概述" class="headerlink" title="6.2static概述"></a>6.2static概述</h3><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs kotlin">可以用来修饰属性 方法 内部类 代码块<br><br>静态变量优先于对象的创建<br><br>静态是随着类的加载而加载，可以使用类名调用(<span class="hljs-keyword">class</span>.param)<br><br>类只加载一次，所以静态变量只存在一份(在方法去的静态域中)<br><br>静态方法中没有<span class="hljs-keyword">this</span>和<span class="hljs-keyword">super</span>，因为他们是随着对象的创建而存在<br><br>静态方法和属性的使用，可以从生命周期的角度去逻辑<br></code></pre></td></tr></table></figure>
+<h3 id="6-3具体使用场景"><a href="#6-3具体使用场景" class="headerlink" title="6.3具体使用场景"></a>6.3具体使用场景</h3><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">静态属性:</span><br>一个属性需要被多个对象共享时<br>这样就不会随着对象的不同而不同<br>类中的常量也常常是static的<br><br><span class="hljs-section">静态方法:</span><br>操控静态属性的方法，<br>工具类中的方法<br></code></pre></td></tr></table></figure>
 
+<h3 id="6-4修饰属性与方法"><a href="#6-4修饰属性与方法" class="headerlink" title="6.4修饰属性与方法"></a>6.4修饰属性与方法</h3><h4 id="6-4-1修饰属性"><a href="#6-4-1修饰属性" class="headerlink" title="6.4.1修饰属性"></a>6.4.1修饰属性</h4><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs dart">修饰的变量叫静态变量<br><br>实例变量:创建类的多个对象，每个对象都有一套自己的非静态属性，和其他对象属性不冲突<br><br>静态变量:创建类的多个对象，共享一个静态变量，某个对象如果把它修改了，别的对象调也是修改过的<br><span class="hljs-keyword">static</span> <span class="hljs-built_in">int</span> <span class="hljs-built_in">num</span>;<br><span class="hljs-keyword">static</span> <span class="hljs-built_in">String</span> name;<br></code></pre></td></tr></table></figure>
+
+<h4 id="6-4-2修饰方法"><a href="#6-4-2修饰方法" class="headerlink" title="6.4.2修饰方法"></a>6.4.2修饰方法</h4><figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs oxygene">随着类的加载而加载，可以通过类名.方法名调用<br><br>静态方法中:只能调用静态的方法或属性<br><br>非静态方法中:成员变量/成员方法:可以是静态的/非静态的<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> void <span class="hljs-keyword">method</span><span class="hljs-params">()</span><span class="hljs-comment">&#123;&#125;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="7-final关键词"><a href="#7-final关键词" class="headerlink" title="7.final关键词"></a>7.final关键词</h2><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs gcode">修饰类 ：类不能被继承<span class="hljs-comment">(比如String System等)</span><br><br>修饰变量 ：变量就变成了常量 只能被赋值一次<br><br>修饰局部变量：例:形参，表示此形参是一个常量<span class="hljs-comment">(已经传了实参)</span><br><br>修饰方法：法不能被重写<span class="hljs-comment">(比如object中的getclass()</span>)<br><br>修饰属性初始化位置：显式初始化、代码块中初始化、构造器中初始化<br></code></pre></td></tr></table></figure>
+<h2 id="8-常量概述"><a href="#8-常量概述" class="headerlink" title="8.常量概述"></a>8.常量概述</h2><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs actionscript">常量是标记为<span class="hljs-keyword">final</span>关键字的类变量<br><br>常量必须赋值，赋值后不能改变。<br><br>常量名称都需要大写。<br><br>如果常量又加上了<span class="hljs-keyword">static</span>修饰就是全局常量<br><br>类变量的特性常量均有<br><br>类变量被存储在常量存储器中。<br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
