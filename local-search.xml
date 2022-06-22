@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>MySQL基础 | 安装步骤</title>
+    <link href="/2022/06/22/MySQL/MySQL%E5%AE%89%E8%A3%85/"/>
+    <url>/2022/06/22/MySQL/MySQL%E5%AE%89%E8%A3%85/</url>
+    
+    <content type="html"><![CDATA[<h2 id="1-配置准备"><a href="#1-配置准备" class="headerlink" title="1.配置准备"></a>1.配置准备</h2><p><a href="www.mysql.com">MySQL 官网</a></p><p><a href="https://webyog.com/product/sqlyog/">可视化IDE: SQLyog</a></p><h2 id="2-操作步骤"><a href="#2-操作步骤" class="headerlink" title="2.操作步骤"></a>2.操作步骤</h2><p>1.解压mysql安装包 根目录新建my.ini文件</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs sql">[mysqld]<br>#端口<br>port<span class="hljs-operator">=</span><span class="hljs-number">3306</span><br>#数据库位置<br>basedir<span class="hljs-operator">=</span>D:\MySQL<span class="hljs-number">-5.7</span><span class="hljs-number">.20</span>\<br>#数据库data目录<br>datadir<span class="hljs-operator">=</span>D:\MySQL<span class="hljs-number">-5.7</span><span class="hljs-number">.20</span>\data\<br>#<span class="hljs-keyword">skip</span><span class="hljs-operator">-</span><span class="hljs-keyword">grant</span><span class="hljs-operator">-</span>tables<br></code></pre></td></tr></table></figure><p>2.使用CMD进入MySQL根目录 执行mysqlid -install语句</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql">PS C:\Users\admin<span class="hljs-operator">&gt;</span> CD D:\MySQL<span class="hljs-number">-5.7</span><span class="hljs-number">.20</span><br>mysqlid <span class="hljs-operator">-</span>install<br></code></pre></td></tr></table></figure><p>3.初始化数据文件</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">mysqld --initialize-insecure --user=mysql<br></code></pre></td></tr></table></figure><p>4.重启mysql,进入mysql页面</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cmd">#启动mysql<br><span class="hljs-built_in">net</span> <span class="hljs-built_in">start</span> mysql<br>#停止mysql<br><span class="hljs-built_in">net</span> stop mysql<br>#进入mysql 默认没有密码<br>mysql -uroot -p<br></code></pre></td></tr></table></figure><p>5.进入mysql后，执行如下修改密码</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">update</span> mysql.user <span class="hljs-keyword">set</span> authentication_string<span class="hljs-operator">=</span>password(<span class="hljs-string">&#x27;要修改的密码&#x27;</span>) <span class="hljs-keyword">where</span> <span class="hljs-keyword">user</span><span class="hljs-operator">=</span><span class="hljs-string">&#x27;root&#x27;</span><span class="hljs-keyword">and</span> Host <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;localhost&#x27;</span>;<br><span class="hljs-comment">-- 刷新权限</span><br>flush privileges;<br></code></pre></td></tr></table></figure><p>6.修改my.ini</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cmd">#注释掉如下就无需每次登录输入密码<br>skip-grant-tables<br></code></pre></td></tr></table></figure><p>7.重启MySQL安装完毕</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>MySQL</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Java基础 | Reflex</title>
     <link href="/2022/06/20/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/SEImprove/Reflex/"/>
     <url>/2022/06/20/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/SEImprove/Reflex/</url>
