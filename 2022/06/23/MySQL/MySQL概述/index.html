@@ -16,23 +16,22 @@
   <meta name="author" content="Kinoz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1.方法核心 方法一般由权限修饰符,返回值类型,方法名,形参,方法体组成123456书写格式&amp;#123;	权限修饰符  返回值类型  方法名(形参(即局部变量))&amp;#123;			方法体	&amp;#125;&amp;#125; 形参与返回值类型可有可无根据经验或者题目要求 有返回值的情况下需要使用return关键词 写好的方法通过类创建对象去调用使用即可  1.1代码实现12345678910111213pub">
+    <meta name="description" content="1.数据库概述1.1两种类型关系型数据库 MySQL、sqlServer等，通过表和表之间、行和行之间的关系进行数据库连接 非关系型数据库 Redi、MongDB等,对象存储、通过对象自身的属性来决定 1.2DB&#x2F;DBS&#x2F;DBMS三者关系 DBS包括DB和DBMS。数据库系统是一个通称，包括数据库、数据库管理系统、数据库管理人员等的统称，是最大的范畴。 DBMS和DB：DBMS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java基础 | 方法总结">
-<meta property="og:url" content="http://example.com/2022/03/26/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:title" content="MySQL基础 | OVERVIEW">
+<meta property="og:url" content="http://example.com/2022/06/23/MySQL/MySQL%E6%A6%82%E8%BF%B0/index.html">
 <meta property="og:site_name" content="小郝博客 - Hexo博客">
-<meta property="og:description" content="1.方法核心 方法一般由权限修饰符,返回值类型,方法名,形参,方法体组成123456书写格式&amp;#123;	权限修饰符  返回值类型  方法名(形参(即局部变量))&amp;#123;			方法体	&amp;#125;&amp;#125; 形参与返回值类型可有可无根据经验或者题目要求 有返回值的情况下需要使用return关键词 写好的方法通过类创建对象去调用使用即可  1.1代码实现12345678910111213pub">
+<meta property="og:description" content="1.数据库概述1.1两种类型关系型数据库 MySQL、sqlServer等，通过表和表之间、行和行之间的关系进行数据库连接 非关系型数据库 Redi、MongDB等,对象存储、通过对象自身的属性来决定 1.2DB&#x2F;DBS&#x2F;DBMS三者关系 DBS包括DB和DBMS。数据库系统是一个通称，包括数据库、数据库管理系统、数据库管理人员等的统称，是最大的范畴。 DBMS和DB：DBMS">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/javasss.png">
-<meta property="article:published_time" content="2022-03-26T02:22:09.000Z">
-<meta property="article:modified_time" content="2022-05-05T15:05:34.942Z">
+<meta property="og:image" content="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/mysqlbasicknowledge.jpg">
+<meta property="article:published_time" content="2022-06-23T01:26:04.000Z">
+<meta property="article:modified_time" content="2022-06-23T02:22:27.814Z">
 <meta property="article:author" content="Kinoz">
-<meta property="article:tag" content="面向对象">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/javasss.png">
+<meta name="twitter:image" content="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/mysqlbasicknowledge.jpg">
   
   
-  <title>Java基础 | 方法总结 - 小郝博客 - Hexo博客</title>
+  <title>MySQL基础 | OVERVIEW - 小郝博客 - Hexo博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -189,13 +188,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/room.png') no-repeat center center; background-size: cover;">
+     style="background: url('https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/mysqlbasicknowledge.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Java基础 | 方法总结"></span>
+            <span id="subtitle" data-typed-text="MySQL基础 | OVERVIEW"></span>
           
         </div>
 
@@ -206,8 +205,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-03-26 10:22" pubdate>
-          2022年3月26日 上午
+        <time datetime="2022-06-23 09:26" pubdate>
+          2022年6月23日 上午
         </time>
       </span>
     
@@ -218,7 +217,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          2.7k 字
         
       </span>
     
@@ -229,7 +228,7 @@
         
         
         
-          13 分钟
+          23 分钟
         
       </span>
     
@@ -267,63 +266,64 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Java基础 | 方法总结</h1>
+            <h1 style="display: none">MySQL基础 | OVERVIEW</h1>
             
             <div class="markdown-body">
               
-              <h2 id="1-方法核心"><a href="#1-方法核心" class="headerlink" title="1.方法核心"></a>1.方法核心</h2><ol>
-<li>方法一般由权限修饰符,返回值类型,方法名,形参,方法体组成<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="language-xml">书写格式</span><br><span class="language-xml"></span><span class="hljs-template-variable">&#123;</span><br><span class="hljs-template-variable">	权限修饰符  返回值类型  方法名(形参(即局部变量))&#123;</span><br><span class="hljs-template-variable">			方法体</span><br><span class="hljs-template-variable">	&#125;</span><span class="language-xml"></span><br><span class="language-xml">&#125;</span><br></code></pre></td></tr></table></figure></li>
-<li>形参与返回值类型可有可无根据经验或者题目要求</li>
-<li>有返回值的情况下需要使用return关键词</li>
-<li>写好的方法通过类创建对象去调用使用即可</li>
+              <h2 id="1-数据库概述"><a href="#1-数据库概述" class="headerlink" title="1.数据库概述"></a>1.数据库概述</h2><h3 id="1-1两种类型"><a href="#1-1两种类型" class="headerlink" title="1.1两种类型"></a>1.1两种类型</h3><p><strong>关系型数据库</strong></p>
+<p>MySQL、sqlServer等，通过表和表之间、行和行之间的关系进行数据库连接</p>
+<p><strong>非关系型数据库</strong></p>
+<p>Redi、MongDB等,对象存储、通过对象自身的属性来决定</p>
+<h3 id="1-2DB-x2F-DBS-x2F-DBMS三者关系"><a href="#1-2DB-x2F-DBS-x2F-DBMS三者关系" class="headerlink" title="1.2DB&#x2F;DBS&#x2F;DBMS三者关系"></a>1.2DB&#x2F;DBS&#x2F;DBMS三者关系</h3><ol>
+<li>DBS包括DB和DBMS。数据库系统是一个通称，包括数据库、数据库管理系统、数据库管理人员等的统称，是最大的范畴。</li>
+<li>DBMS和DB：DBMS是一种操纵和管理数据库的大型软件，是用于建立、使用和维护数据库（DB）。它对数据库进行统一的管理和控制，以保证数据库的安全性和完整性。用户通过DBMS访问数据库（DB）中的数据。</li>
+<li>DBS和DB：数据库系统DBS是一个实际可运行的存储、维护和应用系统提供数据的软件系统，是存储介质、处理对象和管理系统的集合体。它通常由软件、数据库（DB）和数据管理员组成。</li>
 </ol>
-<h3 id="1-1代码实现"><a href="#1-1代码实现" class="headerlink" title="1.1代码实现"></a>1.1代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span>&#123;<span class="hljs-comment">//无形参</span><br>	System.out.println(<span class="hljs-string">&quot;justdoit.&quot;</span>);<br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">sleep</span><span class="hljs-params">(<span class="hljs-type">int</span> time)</span>&#123;<span class="hljs-comment">//有形参 无返回值</span><br>	System.out.println(<span class="hljs-string">&quot;sleep&quot;</span>+time+<span class="hljs-string">&quot;minutes&quot;</span>);<br>&#125;<br><span class="hljs-keyword">public</span> String <span class="hljs-title function_">getColor</span><span class="hljs-params">()</span>&#123;<span class="hljs-comment">//有返回值 需要return</span><br>	<span class="hljs-keyword">return</span>  color;<br>&#125;<br><span class="hljs-keyword">public</span> String <span class="hljs-title function_">getNation</span><span class="hljs-params">(String nation)</span>&#123; <span class="hljs-comment">//有返回值且有形参 需要return</span><br>	String infos=<span class="hljs-string">&quot;Tomnationis:&quot;</span>+nation;<br>	<span class="hljs-keyword">return</span>  infos;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h3 id="1-1注意事项"><a href="#1-1注意事项" class="headerlink" title="1.1注意事项"></a>1.1注意事项</h3><ul>
-<li>方法使用中，可以调用当前类的属性或方法</li>
-<li>特殊：方法自己调用自己：递归方法</li>
-<li>方法中不可再定义其他方法</li>
+<h3 id="1-3基本语句"><a href="#1-3基本语句" class="headerlink" title="1.3基本语句"></a>1.3基本语句</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs sql">刷新权限 flush privileges;<br>查询数据库 <span class="hljs-keyword">show</span> databases;<br>查询表 <span class="hljs-keyword">show</span> tables;<br>切换数据库 Use 数据库名称;<br>显示数据库表中所有表信息 <span class="hljs-keyword">describe</span> 表名称;<br>创建数据库 creat database 数据库名称;<br>退出数据库 exit;<br>单行注释 <span class="hljs-comment">-- 注释内容;</span><br>多行注释 <span class="hljs-comment">/*和Java写法一样*/</span><br>更改密码 <br><span class="hljs-keyword">update</span> mysql.user <span class="hljs-keyword">set</span> authentication_string<span class="hljs-operator">=</span>password(<span class="hljs-string">&#x27;123456&#x27;</span>) <span class="hljs-keyword">where</span> <span class="hljs-keyword">user</span><span class="hljs-operator">=</span><span class="hljs-string">&#x27;root&#x27;</span><span class="hljs-keyword">and</span> Host <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;localhost&#x27;</span>;<br></code></pre></td></tr></table></figure>
+<h3 id="1-4字段属性"><a href="#1-4字段属性" class="headerlink" title="1.4字段属性"></a>1.4字段属性</h3><ul>
+<li>Unsigned：无符号的整数,声明了该列不可声明为负数</li>
+<li>Zerofill：不足的位数用0来补充 int(3) 5-005</li>
+<li>自增：自动在上一条记录上+1,通常用于设置唯一的主键 index,必须是整数类型,可在高级选项中自定义设置主键自增和起始步长</li>
+<li>非空：设置为非空，若不赋值就会报错,不设置不写的情况下，默认显示(NULL)</li>
 </ul>
-<h2 id="2-方法重载"><a href="#2-方法重载" class="headerlink" title="2.方法重载"></a>2.方法重载</h2><p>方法名相同,与返回值类型无关(构造方法没有返回值),参数个数和参数类型不同即可</p>
-<h3 id="2-1注意事项"><a href="#2-1注意事项" class="headerlink" title="2.1注意事项"></a>2.1注意事项</h3><ol>
-<li>如果我们没有给出构造方法,系统将会自动一共一个无参构造方法</li>
-<li>如果我们给出了构造方法,系统将不再提供默认的无参构造方法</li>
-<li>注意:这个时候,如果我们还想使用无参构造方法,就必须自己给出,建议永远自己给出无参构造方法</li>
+<p><img src="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/sqlfield.png" srcset="/img/loading2.gif" lazyload alt="SQLyog示意图"></p>
+<h3 id="1-5数据类型"><a href="#1-5数据类型" class="headerlink" title="1.5数据类型"></a>1.5数据类型</h3><p><img src="https://img-blog.csdnimg.cn/img_convert/a309e1c7b8f04deda8cc5e98df3a7ada.png" srcset="/img/loading2.gif" lazyload alt="数据类型表"></p>
+<h3 id="1-6表类型"><a href="#1-6表类型" class="headerlink" title="1.6表类型"></a>1.6表类型</h3><ul>
+<li>MYISAM 节约空间，速度更快</li>
+<li>INNODB 主流类型，安全性高，事务的处理，多表用户操作</li>
+<li>在物理空间的位置，数据库文件都存在在data目录下，一个文件对应一个数据库</li>
+<li>两者在物理上的区别</li>
+</ul>
+<ol>
+<li>INNODB生产为frm结尾的文件，及上级目录ibdata1文件</li>
+<li>MYISAM生产三个文件</li>
+<li>.frm表结构定义文件</li>
+<li>.MYD 数据文件(data)</li>
+<li>.MYI 索引文件(index)</li>
 </ol>
-<h3 id="2-2varargs机制"><a href="#2-2varargs机制" class="headerlink" title="2.2varargs机制"></a>2.2varargs机制</h3><p>就是可变个数形参的方法</p>
-<ul>
-<li>允许直接定义能和多个实参相匹配的形参</li>
-<li>Void show(形参类型 形参名称) &#x2F;&#x2F;前</li>
-<li>Void show(形参类型[ ]形参名称) &#x2F;&#x2F;前</li>
-<li>Void show(形参类型…形参名称) &#x2F;&#x2F;后</li>
-</ul>
-<h3 id="2-3varags注意事项"><a href="#2-3varags注意事项" class="headerlink" title="2.3varags注意事项"></a>2.3varags注意事项</h3><ol>
-<li>方法里只能写一个varargs机制的形参</li>
-<li>若存在两个形参varargs机制形参要写到后面</li>
-<li>书写格式中形参类型…形参名称和形参类型[ ]形参名称功能一样只能存在一个</li>
-</ol>
-<h3 id="2-4代码实现"><a href="#2-4代码实现" class="headerlink" title="2.4代码实现"></a>2.4代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">Void <span class="hljs-title function_">show</span><span class="hljs-params">(String b,String...aaa)</span>&#123;&#125;<span class="hljs-comment">//正确写法，varargs机制必须在最后</span><br>Void <span class="hljs-title function_">show</span><span class="hljs-params">(String...b,String...aaa)</span>&#123;&#125;<span class="hljs-comment">//错误写法只能写一个varargs机制</span><br></code></pre></td></tr></table></figure>
+<h2 id="2-操作数据库"><a href="#2-操作数据库" class="headerlink" title="2.操作数据库"></a>2.操作数据库</h2><h3 id="2-1创建数据库"><a href="#2-1创建数据库" class="headerlink" title="2.1创建数据库"></a>2.1创建数据库</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- 创建</span><br><span class="hljs-keyword">CREATE</span> DATABASE IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> 数据库名称<br><span class="hljs-comment">-- 删除</span><br><span class="hljs-keyword">DROP</span> DATABASE 数据库名称<br><span class="hljs-comment">-- 如果和关键词冲突需加  `</span><br><span class="hljs-comment">-- 使用数据库</span><br>USE `school`<br></code></pre></td></tr></table></figure>
+<h3 id="2-2创建表"><a href="#2-2创建表" class="headerlink" title="2.2创建表"></a>2.2创建表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- 格式 []代表为可选项</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span>  `表名`（<br>`字段名` 列类型(位数) [属性] [索引] [注释] ,<br>............<br>`字段名` 列类型(位数) [属性] [索引] [注释] <br>）ENGINE<span class="hljs-operator">=</span>数据表类型 <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>字符集<br></code></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- 例子</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> `student`(<br> `id` <span class="hljs-type">INT</span>(<span class="hljs-number">10</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> AUTO_INCREMENT COMMENT <span class="hljs-string">&#x27;jsei_id&#x27;</span>,<br> `name` <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">30</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;name&#x27;</span>,<br> <span class="hljs-keyword">PRIMARY</span> KEY(`id`)<br>)ENGINE<span class="hljs-operator">=</span>INNODB <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8<br><span class="hljs-comment">-- CHARSET=XXX 为设置此表的字符集</span><br></code></pre></td></tr></table></figure>
+<h3 id="2-3查询指令"><a href="#2-3查询指令" class="headerlink" title="2.3查询指令"></a>2.3查询指令</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- 显示创建这张表/数据库使用的语句</span><br><span class="hljs-keyword">SHOW</span> <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> jsei_info<br><span class="hljs-keyword">SHOW</span> <span class="hljs-keyword">CREATE</span> DATABASE school<br><span class="hljs-comment">-- 显示表的结构</span><br><span class="hljs-keyword">DESC</span> `表名称`<br></code></pre></td></tr></table></figure>
 
+<h3 id="2-4修改删除表"><a href="#2-4修改删除表" class="headerlink" title="2.4修改删除表"></a>2.4修改删除表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- 修改表名称</span><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名称 RENAME <span class="hljs-keyword">AS</span> 新名称<br><span class="hljs-comment">-- 添加属性</span><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名称 <span class="hljs-keyword">ADD</span> `字段名称` 数据类型(<span class="hljs-number">100</span>)<br><span class="hljs-comment">-- 修改约束</span><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名称 MODIFY `字段名称` 数据类型(<span class="hljs-number">3</span>)<br><span class="hljs-comment">-- 修改字段名</span><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名称 CHANGE `旧的字段名` `新的字段名` <span class="hljs-type">CHAR</span>(<span class="hljs-number">3</span>)<br><span class="hljs-comment">-- 删除表字段</span><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名称 <span class="hljs-keyword">DROP</span> `字段名称`<br><span class="hljs-comment">-- 删除表</span><br><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> IF <span class="hljs-keyword">EXISTS</span> 表名称 <br><span class="hljs-comment">-- 保留表格式 清除全部数据</span><br><span class="hljs-keyword">TRUNCATE</span> <span class="hljs-keyword">TABLE</span> `表名称`<br></code></pre></td></tr></table></figure>
+<ul>
+<li>MODIFY只能修改字段的数据类型</li>
+<li>CHANGE能修改字段名和数据类型</li>
+</ul>
+<h2 id="3-外键理解"><a href="#3-外键理解" class="headerlink" title="3.外键理解"></a>3.外键理解</h2><h3 id="3-1概述"><a href="#3-1概述" class="headerlink" title="3.1概述"></a>3.1概述</h3><ul>
+<li>两种方式都为物理外键，看懂即可基本不用</li>
+<li>数据库作为单纯的表，存储数据只有行和列</li>
+<li>阿里开发手册:不得使用外键与级联，一切外键概念必须在应用层解决</li>
+</ul>
+<h3 id="3-2注意事项"><a href="#3-2注意事项" class="headerlink" title="3.2注意事项"></a>3.2注意事项</h3><ul>
+<li>删除有外键关系的表的时候</li>
+<li>必须要删除引用别人的表(从表)</li>
+<li>再删除被引用的表(主表)</li>
+</ul>
+<h3 id="3-3创表时增加"><a href="#3-3创表时增加" class="headerlink" title="3.3创表时增加"></a>3.3创表时增加</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">--主表</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> `表名称` (<br>  `id` <span class="hljs-type">INT</span>(<span class="hljs-number">10</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> AUTO_INCREMENT COMMENT <span class="hljs-string">&#x27;jsei_id&#x27;</span>,<br>  `gradeid` <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">10</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;年纪代号&#x27;</span>,<br>  <span class="hljs-keyword">PRIMARY</span> KEY (`id`),<br>  <span class="hljs-comment">-- 设置约束 `FK_字段名`为默认格式</span><br>  KEY `FK_gradeid` (`gradeid`),<br>  <span class="hljs-comment">--REFERENCES后面代表引用的表和表里面的引用列</span><br>  <span class="hljs-keyword">CONSTRAINT</span> `FK_gradeid` <span class="hljs-keyword">FOREIGN</span> KEY (`gradeid`) <span class="hljs-keyword">REFERENCES</span> `grade` (`gradeid`)<br>) ENGINE<span class="hljs-operator">=</span>INNODB AUTO_INCREMENT<span class="hljs-operator">=</span><span class="hljs-number">2</span> <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8<br><span class="hljs-comment">-- 被引用表</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> `grade`(<br> `gradeid` <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">10</span>) COMMENT <span class="hljs-string">&#x27;年纪代号&#x27;</span>,<br> `gradename` <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">10</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;名字&#x27;</span>,<br> <span class="hljs-keyword">PRIMARY</span> KEY (`gradeid`)<br>)ENGINE<span class="hljs-operator">=</span>INNODB AUTO_INCREMENT<span class="hljs-operator">=</span><span class="hljs-number">2</span>  <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8<br></code></pre></td></tr></table></figure>
+<h3 id="3-2使用ALTER"><a href="#3-2使用ALTER" class="headerlink" title="3.2使用ALTER"></a>3.2使用ALTER</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> `表名称`<br><span class="hljs-keyword">ADD</span> CONSTRAIN `FK_字段名` <span class="hljs-keyword">FOREIGN</span> KEY (`字段名`) <span class="hljs-keyword">REFERENCES</span> `被引用表名称`(`被引用表字段`)<br></code></pre></td></tr></table></figure>
 
-<h2 id="3-值传递机制"><a href="#3-值传递机制" class="headerlink" title="3.值传递机制"></a>3.值传递机制</h2><p><strong>变量的值传递</strong></p>
-<ul>
-<li>基本数据类型：赋值的为变量保存的数据值</li>
-<li>引用数据类型：赋值的为变量保存的地址值</li>
-</ul>
-<p><strong>方法的值传递</strong></p>
-<ul>
-<li>形参，方法定义时，声明在()里面的</li>
-<li>实参，方法调用时，实际传递给形参的数据</li>
-</ul>
-<p><strong>值传递机制</strong></p>
-<ul>
-<li>如果参数为基本数据类型，此时实参给形参的是实参真实存储的数据值</li>
-<li>如果参数为引用数据类型，此时实参赋值给形参的是实参真实存储的地址值</li>
-</ul>
-<h2 id="4-递归方法"><a href="#4-递归方法" class="headerlink" title="4.递归方法"></a>4.递归方法</h2><ul>
-<li>即方法调用自己本身</li>
-<li>递归方法包含了一种隐式的循环，可以重复的去执行代码,但这种重复不需要循环控制<br>递归方法一定是向已知的方向递归，否则的话就会变成了无穷递归，类似于死循环<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java">求<span class="hljs-number">100</span>以内数的和<br>Public <span class="hljs-type">int</span> <span class="hljs-title function_">dgsum</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span>&#123;<br>   <span class="hljs-keyword">if</span>(n==<span class="hljs-number">1</span>)&#123;<br>   return1;<br>&#125;<span class="hljs-keyword">else</span>&#123;<br>   <span class="hljs-keyword">return</span> n + dgsum(n-<span class="hljs-number">1</span>);<br>&#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
-</ul>
 
               
             </div>
@@ -341,7 +341,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Java/" class="category-chain-item">Java</a>
+  <a href="/categories/MySQL/" class="category-chain-item">MySQL</a>
   
   
 
@@ -353,13 +353,6 @@
     </div>
   
   
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">#面向对象</a>
-      
-    </div>
-  
 </div>
 
 
@@ -368,8 +361,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Java基础 | 方法总结</div>
-      <div>http://example.com/2022/03/26/Java初级部分/方法总结/</div>
+      <div>MySQL基础 | OVERVIEW</div>
+      <div>http://example.com/2022/06/23/MySQL/MySQL概述/</div>
     </div>
     <div class="license-meta">
       
@@ -381,7 +374,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年3月26日</div>
+          <div>2022年6月23日</div>
         </div>
       
       
@@ -411,18 +404,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/03/28/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/OOP/Encapsulation/" title="Encapsulation[JAVA]">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Encapsulation[JAVA]</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/03/26/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/" title="Java基础 | 类与对象">
-                        <span class="hidden-mobile">Java基础 | 类与对象</span>
+                      <a href="/2022/06/22/MySQL/MySQL%E5%AE%89%E8%A3%85/" title="MySQL基础 | INSTALL">
+                        <span class="hidden-mobile">MySQL基础 | INSTALL</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
