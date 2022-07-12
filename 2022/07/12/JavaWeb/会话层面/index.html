@@ -16,23 +16,22 @@
   <meta name="author" content="Kinoz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1.Maven配置1.1操作步骤 Apache Maven Download Apache Maven Repository 解压zip文件到指定目录下 修改conf目录下的setting.xml 添加本地仓库地址用于存储类库 添加阿里云镜像快速下载类库 添加Maven到环境变量,cmd运行mvn -v跳出版本号配置成功  1.2修改setting.xml123456789&lt;!--阿里云镜像">
+    <meta name="description" content="1.会话概述用户打开浏览器，点击了很多个url，访问了多个web资源，关闭浏览器，这个过程就是会话 1.1网站怎么证明你来过 Cookie服务端会给客户端发一个信件 客户端下次再访问服务端携带信件即可 Session服务端对客户端做标记，下次客户端再访问，通过标记即可匹配  1.2Cookie和session区别 Cookie把数据写给用户的浏览器保存(可保存多个) Session把数据写给用户自">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Maven安装使用">
-<meta property="og:url" content="http://example.com/2022/07/04/JavaWeb/Maven%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="Web会话层">
+<meta property="og:url" content="http://example.com/2022/07/12/JavaWeb/%E4%BC%9A%E8%AF%9D%E5%B1%82%E9%9D%A2/index.html">
 <meta property="og:site_name" content="小郝博客 - Hexo博客">
-<meta property="og:description" content="1.Maven配置1.1操作步骤 Apache Maven Download Apache Maven Repository 解压zip文件到指定目录下 修改conf目录下的setting.xml 添加本地仓库地址用于存储类库 添加阿里云镜像快速下载类库 添加Maven到环境变量,cmd运行mvn -v跳出版本号配置成功  1.2修改setting.xml123456789&lt;!--阿里云镜像">
+<meta property="og:description" content="1.会话概述用户打开浏览器，点击了很多个url，访问了多个web资源，关闭浏览器，这个过程就是会话 1.1网站怎么证明你来过 Cookie服务端会给客户端发一个信件 客户端下次再访问服务端携带信件即可 Session服务端对客户端做标记，下次客户端再访问，通过标记即可匹配  1.2Cookie和session区别 Cookie把数据写给用户的浏览器保存(可保存多个) Session把数据写给用户自">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/ApacheMavenConfig.jpg">
-<meta property="article:published_time" content="2022-07-04T03:50:04.000Z">
-<meta property="article:modified_time" content="2022-07-04T03:56:29.088Z">
+<meta property="og:image" content="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/webcookieandsession.png">
+<meta property="article:published_time" content="2022-07-12T11:12:04.000Z">
+<meta property="article:modified_time" content="2022-07-12T12:00:07.302Z">
 <meta property="article:author" content="Kinoz">
-<meta property="article:tag" content="Utils">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/ApacheMavenConfig.jpg">
+<meta name="twitter:image" content="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/webcookieandsession.png">
   
   
-  <title>Maven安装使用 - 小郝博客 - Hexo博客</title>
+  <title>Web会话层 - 小郝博客 - Hexo博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -189,13 +188,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/ApacheMavenConfig.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/webcookieandsession.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Maven安装使用"></span>
+            <span id="subtitle" data-typed-text="Web会话层"></span>
           
         </div>
 
@@ -206,8 +205,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-07-04 11:50" pubdate>
-          2022年7月4日 中午
+        <time datetime="2022-07-12 19:12" pubdate>
+          2022年7月12日 晚上
         </time>
       </span>
     
@@ -267,48 +266,38 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Maven安装使用</h1>
+            <h1 style="display: none">Web会话层</h1>
             
             <div class="markdown-body">
               
-              <h2 id="1-Maven配置"><a href="#1-Maven配置" class="headerlink" title="1.Maven配置"></a>1.Maven配置</h2><h3 id="1-1操作步骤"><a href="#1-1操作步骤" class="headerlink" title="1.1操作步骤"></a>1.1操作步骤</h3><ol>
-<li><a target="_blank" rel="noopener" href="https://maven.apache.org/">Apache Maven Download</a></li>
-<li><a target="_blank" rel="noopener" href="https://maven.apache.org/">Apache Maven Repository</a></li>
-<li>解压zip文件到指定目录下</li>
-<li>修改conf目录下的setting.xml</li>
-<li>添加本地仓库地址用于存储类库</li>
-<li>添加阿里云镜像快速下载类库</li>
-<li>添加Maven到环境变量,cmd运行mvn -v跳出版本号配置成功</li>
-</ol>
-<h3 id="1-2修改setting-xml"><a href="#1-2修改setting-xml" class="headerlink" title="1.2修改setting.xml"></a>1.2修改setting.xml</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--阿里云镜像--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">mirror</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>nexus-aliyun<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">mirrorOf</span>&gt;</span>central<span class="hljs-tag">&lt;/<span class="hljs-name">mirrorOf</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>Nexus aliyun<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/groups/public/<span class="hljs-tag">&lt;/<span class="hljs-name">url</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">mirror</span>&gt;</span><br><span class="hljs-comment">&lt;!--本地仓库地址--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">localRepository</span>&gt;</span>仓库文件夹<span class="hljs-tag">&lt;/<span class="hljs-name">localRepository</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h3 id="1-3创建Maven工程"><a href="#1-3创建Maven工程" class="headerlink" title="1.3创建Maven工程"></a>1.3创建Maven工程</h3><ol>
-<li>IDEA中左边选择maven项目</li>
-<li>右边勾选create from archetype</li>
-<li>选择maven-archetype-webapp使用模板创建web工程</li>
-<li>Groupid组名一般由公司和域名组成</li>
-<li>Artifactid项目表示名</li>
-<li>Version版本号默认即可</li>
-<li>选择maven路径和seeting.xml以及repository路径</li>
-</ol>
-<h3 id="1-4pom-xml"><a href="#1-4pom-xml" class="headerlink" title="1.4pom.xml"></a>1.4pom.xml</h3><p>在Maven工程下pom作为当前工程的配置文件</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--头文件信息默认不动--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">modelVersion</span>&gt;</span>4.0.0<span class="hljs-tag">&lt;/<span class="hljs-name">modelVersion</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>top.kinoz<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>Maven_Study<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">packaging</span>&gt;</span>pom<span class="hljs-tag">&lt;/<span class="hljs-name">packaging</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.0-SNAPSHOT<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--子模块--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">modules</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">module</span>&gt;</span>子模块名字<span class="hljs-tag">&lt;/<span class="hljs-name">module</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">modules</span>&gt;</span><br><span class="hljs-comment">&lt;!--里面一般写依赖jar包--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>配置信息一般去Maven仓库找<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--因为Maven默认jdk1.5,指定jdk版本便于识别--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">properties</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="hljs-tag">&lt;/<span class="hljs-name">project.build.sourceEncoding</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">maven.compiler.source</span>&gt;</span>当前jdk版本<span class="hljs-tag">&lt;/<span class="hljs-name">maven.compiler.source</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">maven.compiler.target</span>&gt;</span>当前jdk版本<span class="hljs-tag">&lt;/<span class="hljs-name">maven.compiler.target</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">properties</span>&gt;</span><br></code></pre></td></tr></table></figure>
+              <h2 id="1-会话概述"><a href="#1-会话概述" class="headerlink" title="1.会话概述"></a>1.会话概述</h2><p>用户打开浏览器，点击了很多个url，访问了多个web资源，关闭浏览器，这个过程就是会话</p>
+<h3 id="1-1网站怎么证明你来过"><a href="#1-1网站怎么证明你来过" class="headerlink" title="1.1网站怎么证明你来过"></a>1.1网站怎么证明你来过</h3><ul>
+<li>Cookie服务端会给客户端发一个<code>信件</code> 客户端下次再访问服务端携带<code>信件</code>即可</li>
+<li>Session服务端对客户端做标记，下次客户端再访问，通过标记即可匹配<br><img src="https://img-blog.csdnimg.cn/0838e3d393774a799ba7bec40a5e8d91.png#pic_center" srcset="/img/loading2.gif" lazyload></li>
+</ul>
+<h3 id="1-2Cookie和session区别"><a href="#1-2Cookie和session区别" class="headerlink" title="1.2Cookie和session区别"></a>1.2Cookie和session区别</h3><ul>
+<li>Cookie把数据写给用户的浏览器保存(可保存多个)</li>
+<li>Session把数据写给用户自己独有的SessionId</li>
+<li>Server保存(保存重要的信息,减少Server资源浪费),Session由服务器创建</li>
+<li>Cookie的构造器只能携带String类型参数,而Session可携带Object类型参数</li>
+</ul>
+<h2 id="2-Cookie"><a href="#2-Cookie" class="headerlink" title="2.Cookie"></a>2.Cookie</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//1.传给客户端一个cookie</span><br><span class="hljs-type">Cookie</span> <span class="hljs-variable">cookie</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Cookie</span>(<span class="hljs-string">&quot;name&quot;</span>, <span class="hljs-string">&quot;携带参数&quot;</span>);<br><span class="hljs-comment">//设置cookie有效期 单位/s</span><br>cookie.setMaxAge(<span class="hljs-number">600</span>);<br>resp.addCookie(cookie);<br><br><span class="hljs-comment">//2.从客户端获取cookie</span><br>Cookie[] cookies = req.getCookies();<br><br><span class="hljs-comment">//3.获取客户端cookie里携带的参数</span><br><span class="hljs-type">PrintWriter</span> <span class="hljs-variable">out</span> <span class="hljs-operator">=</span> resp.getWriter();<br><span class="hljs-keyword">if</span> (cookies != <span class="hljs-literal">null</span>)&#123;<br>    out.write(cookie.getValue());<br>&#125;<span class="hljs-keyword">else</span> &#123;<br>    out.write(<span class="hljs-string">&quot;cookie 不存在&quot;</span>);<br>&#125;<br><span class="hljs-comment">//需要强制停止cookie时候,只需新建一个实现了servlet的类</span><br><span class="hljs-comment">//再响应一个setMaxAge为0的cookie到客户端即可</span><br><span class="hljs-comment">//两个cookie的构造器形参要相同</span><br></code></pre></td></tr></table></figure>
 
-<h2 id="2-Tomcat配置"><a href="#2-Tomcat配置" class="headerlink" title="2.Tomcat配置"></a>2.Tomcat配置</h2><h3 id="2-2操作步骤"><a href="#2-2操作步骤" class="headerlink" title="2.2操作步骤"></a>2.2操作步骤</h3><ol>
-<li><a target="_blank" rel="noopener" href="https://tomcat.apache.org/">Apache Tomcat Download</a></li>
-<li>解压zip文件到指定目录下</li>
-<li>在bin目录下双击startup.bat即可启动</li>
-<li>浏览器访问localhost:8080端口即成功</li>
-</ol>
-<h3 id="2-2部署到IDEA"><a href="#2-2部署到IDEA" class="headerlink" title="2.2部署到IDEA"></a>2.2部署到IDEA</h3><p><strong>配置页面</strong><br><img src="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/Tomcatconfig1.jpg" srcset="/img/loading2.gif" lazyload></p>
-<p><strong>部署web项目</strong><br><img src="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/Tomcatconfig2.jpg" srcset="/img/loading2.gif" lazyload></p>
-<h3 id="2-3Maven依赖"><a href="#2-3Maven依赖" class="headerlink" title="2.3Maven依赖"></a>2.3Maven依赖</h3><ol>
-<li>Tomcat10.0开始jar包和之前做了区别</li>
-<li>10以前:import javax.servlet.http.HttpServlet;</li>
-<li>10以后:import jakarta.servlet.http.HttpServlet;<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--以下为10以后的依赖，10以前可以去Maven仓库--&gt;</span><br><span class="hljs-comment">&lt;!--https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-servlet-api--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.tomcat<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>tomcat-servlet-api<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>10.0.7<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br><span class="hljs-comment">&lt;!--https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jsp-api--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.tomcat<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>tomcat-jsp-api<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>10.0.7<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h3 id="2-4web-xml"><a href="#2-4web-xml" class="headerlink" title="2.4web.xml"></a>2.4web.xml</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--搭配tomcat服务器最新的web配置环境--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">web-app</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;https://jakarta.ee/xml/ns/jakartaee&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;https://jakarta.ee/xml/ns/jakartaee</span></span><br><span class="hljs-string"><span class="hljs-tag">                      https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">version</span>=<span class="hljs-string">&quot;5.0&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">metadata-complete</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">web-app</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
-</ol>
+<h2 id="3-Session"><a href="#3-Session" class="headerlink" title="3.Session"></a>3.Session</h2><p><strong>session创建</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//获取一个session</span><br><span class="hljs-type">HttpSession</span> <span class="hljs-variable">session</span> <span class="hljs-operator">=</span> req.getSession();<br><span class="hljs-comment">//session可以携带Object类型</span><br>session.setAttribute(<span class="hljs-string">&quot;name&quot;</span>,<span class="hljs-keyword">new</span> <span class="hljs-title class_">JavaBean</span>(<span class="hljs-string">&quot;李华&quot;</span>,<span class="hljs-number">29</span>));<br><br><span class="hljs-comment">//每个session都有自己唯一的sessionID</span><br><span class="hljs-type">String</span> <span class="hljs-variable">id</span> <span class="hljs-operator">=</span> session.getId();<br><span class="hljs-type">PrintWriter</span> <span class="hljs-variable">writer</span> <span class="hljs-operator">=</span> resp.getWriter();<br><br><span class="hljs-comment">//通过inNew()判断此session的新旧</span><br><span class="hljs-keyword">if</span> (session.isNew())&#123;<br>    writer.print(<span class="hljs-string">&quot;create success!&quot;</span>+id);<br>&#125;<span class="hljs-keyword">else</span> &#123;<br>    writer.print(<span class="hljs-string">&quot;session is already!&quot;</span>+id);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>获取session</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">HttpSession</span> <span class="hljs-variable">session</span> <span class="hljs-operator">=</span> req.getSession();<br>session.getAttribute(<span class="hljs-string">&quot;name&quot;</span>);<br><span class="hljs-comment">//把获取的数据响应到前端页面</span><br><span class="hljs-type">PrintWriter</span> <span class="hljs-variable">out</span> <span class="hljs-operator">=</span> resp.getWriter();<br>out.print(name)<br></code></pre></td></tr></table></figure>
+
+<p><strong>停止session</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//1.手动停止(新建一个类调用invalidate方法)</span><br><span class="hljs-type">HttpSession</span> <span class="hljs-variable">session</span> <span class="hljs-operator">=</span> req.getSession();<br><span class="hljs-comment">//移除session参数</span><br>session.removeAttribute(<span class="hljs-string">&quot;name&quot;</span>);<br>session.invalidate();<br><span class="hljs-type">PrintWriter</span> <span class="hljs-variable">out</span> <span class="hljs-operator">=</span> resp.getWriter();<br>out.print(<span class="hljs-string">&quot;&lt;H1&gt;session remove success please refresh&lt;/H1&gt;&quot;</span>);<br></code></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml">//2.通过xml<br><span class="hljs-tag">&lt;<span class="hljs-name">session-config</span>&gt;</span><br>    <span class="hljs-comment">&lt;!--设置session的失效时间 单位/min--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">session-timeout</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">session-timeout</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">session-config</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="4-Filter"><a href="#4-Filter" class="headerlink" title="4.Filter"></a>4.Filter</h2><ul>
+<li>过滤器实际上就是对web资源进行拦截，做一些处理后再交给下一个过滤器或servlet处理。</li>
+<li>通常都是用来拦截request进行处理的，也可以对返回的response进行拦截处理</li>
+<li>应用场景：自动登录，统一设置编码格式，访问权限控制，敏感字符过滤等<br><img src="https://img-blog.csdnimg.cn/e948552787ec4c808a37ef3fad4499f9.png#pic_center" srcset="/img/loading2.gif" lazyload><h3 id="4-1统一编码"><a href="#4-1统一编码" class="headerlink" title="4.1统一编码"></a>4.1统一编码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//一个类实现了Filter且实现它的方法就成了一个过滤器</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">FilterBasic</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Filter</span> &#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">init</span><span class="hljs-params">(FilterConfig filterConfig)</span>&#123;<br>        <span class="hljs-comment">//会在服务器启动的同时触发</span><br>        System.out.println(<span class="hljs-string">&quot;web server init&quot;</span>);<br>    &#125;<br><br>    <span class="hljs-comment">//主要是对request和response进行一些处理</span><br>    <span class="hljs-comment">//然后交给下一个过滤器或Servlet处理</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">doFilter</span><span class="hljs-params">(ServletRequest req, ServletResponse resp, FilterChain fc)</span>&#123;<br>        <span class="hljs-comment">//解决乱码问题</span><br>        req.setCharacterEncoding(<span class="hljs-string">&quot;utf-8&quot;</span>);<br>        resp.setCharacterEncoding(<span class="hljs-string">&quot;utf-8&quot;</span>);<br>        <span class="hljs-comment">//后面可能会有其他的过滤器，保过滤器继续同行</span><br>        fc.doFilter(req,resp);<br>    &#125;<br><br>    <span class="hljs-comment">//当服务器关闭过滤器即销毁</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">destroy</span><span class="hljs-params">()</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;filter destroyed&quot;</span>);<br>    &#125;<br>&#125;<br><span class="hljs-comment">//此类需要在web.xml中进行注册</span><br><span class="hljs-comment">//&lt;filter&gt;和&lt;filter-Mapping&gt;标签</span><br><span class="hljs-comment">//&lt;url-patterns&gt;下写需要过滤的路径</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="5-MVC整体结构"><a href="#5-MVC整体结构" class="headerlink" title="5.MVC整体结构"></a>5.MVC整体结构</h2><p><img src="https://img-blog.csdnimg.cn/abd91e9359db4287949a66876b4ebad6.png#pic_center" srcset="/img/loading2.gif" lazyload alt="MVC架构图"></p>
 
               
             </div>
@@ -316,13 +305,27 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
   
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/Utils/">#Utils</a>
-      
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JavaWeb/" class="category-chain-item">JavaWeb</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
     </div>
+  
   
 </div>
 
@@ -332,8 +335,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Maven安装使用</div>
-      <div>http://example.com/2022/07/04/JavaWeb/Maven安装使用/</div>
+      <div>Web会话层</div>
+      <div>http://example.com/2022/07/12/JavaWeb/会话层面/</div>
     </div>
     <div class="license-meta">
       
@@ -345,7 +348,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年7月4日</div>
+          <div>2022年7月12日</div>
         </div>
       
       
@@ -375,18 +378,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/07/12/JavaWeb/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8A%9F%E8%83%BD/" title="文件上传功能">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">文件上传功能</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/06/30/MySQL/JDBC%E9%85%8D%E7%BD%AE/" title="JDBC安装使用">
-                        <span class="hidden-mobile">JDBC安装使用</span>
+                      <a href="/2022/07/12/JavaWeb/JavaWeb%E5%9F%BA%E7%A1%80/" title="JavaWeb基础">
+                        <span class="hidden-mobile">JavaWeb基础</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
