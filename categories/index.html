@@ -1,0 +1,840 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/code.png">
+  <link rel="icon" href="/img/code.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Categories">
+<meta property="og:url" content="http://example.com/categories/index.html">
+<meta property="og:site_name" content="小郝博客 - Hexo博客">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Categories - 小郝博客 - Hexo博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Kinozspace.top</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/night.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Categories"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Java"
+        id="heading-d52387880e1ea22817a72d3759213819" role="tab" data-toggle="collapse" href="#collapse-d52387880e1ea22817a72d3759213819"
+        aria-expanded="false"
+      >
+        Java
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/Java/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>8</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-d52387880e1ea22817a72d3759213819"
+           role="tabpanel" aria-labelledby="heading-d52387880e1ea22817a72d3759213819">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2022/06/20/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/SEImprove/Reflex/" title="Java基础 | Reflex"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Java基础 | Reflex</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/06/17/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/SEImprove/NetCode/" title="Java基础 | NetCode"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Java基础 | NetCode</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/06/05/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/SEImprove/IOStream/" title="Java基础 | IOStream"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Java基础 | IOStream</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/05/23/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/SEImprove/JavaCollection/" title="Java基础 | Collection"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Java基础 | Collection</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/05/01/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/SEImprove/Multithread/" title="Java基础 | Multithread"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Java基础 | Multithread</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/04/23/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" title="Java基础 | 异常处理"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Java基础 | 异常处理</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/03/26/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/" title="Java基础 | 方法总结"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Java基础 | 方法总结</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/03/26/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/" title="Java基础 | 类与对象"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Java基础 | 类与对象</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="MySQL"
+        id="heading-62a004b95946bb97541afa471dcca73a" role="tab" data-toggle="collapse" href="#collapse-62a004b95946bb97541afa471dcca73a"
+        aria-expanded="false"
+      >
+        MySQL
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/MySQL/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>4</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-62a004b95946bb97541afa471dcca73a"
+           role="tabpanel" aria-labelledby="heading-62a004b95946bb97541afa471dcca73a">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2022/06/30/MySQL/MySQL%E5%85%B6%E4%BB%96/" title="MySQL基础 | Others"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">MySQL基础 | Others</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/06/27/MySQL/MYSQLDQL/" title="MySQL基础 | DQL"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">MySQL基础 | DQL</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/06/25/MySQL/MySQL%E6%93%8D%E7%BA%B5/" title="MySQL基础 | DML"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">MySQL基础 | DML</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/06/23/MySQL/MySQL%E6%A6%82%E8%BF%B0/" title="MySQL基础 | OVERVIEW"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">MySQL基础 | OVERVIEW</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="JavaWeb"
+        id="heading-03b719cb9240be3fcb867cb7fda9e9df" role="tab" data-toggle="collapse" href="#collapse-03b719cb9240be3fcb867cb7fda9e9df"
+        aria-expanded="false"
+      >
+        JavaWeb
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/JavaWeb/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>3</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-03b719cb9240be3fcb867cb7fda9e9df"
+           role="tabpanel" aria-labelledby="heading-03b719cb9240be3fcb867cb7fda9e9df">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2022/07/12/JavaWeb/%E4%BC%9A%E8%AF%9D%E5%B1%82%E9%9D%A2/" title="Web会话层"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Web会话层</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/07/12/JavaWeb/JavaWeb%E5%9F%BA%E7%A1%80/" title="JavaWeb基础"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">JavaWeb基础</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/07/12/JavaWeb/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8A%9F%E8%83%BD/" title="文件上传功能"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">文件上传功能</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="OOP"
+        id="heading-ce4195da808656beae0c97fed9194192" role="tab" data-toggle="collapse" href="#collapse-ce4195da808656beae0c97fed9194192"
+        aria-expanded="false"
+      >
+        OOP
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/OOP/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>3</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-ce4195da808656beae0c97fed9194192"
+           role="tabpanel" aria-labelledby="heading-ce4195da808656beae0c97fed9194192">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2022/04/08/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/OOP/Polymorphism/" title="Polymorphism[JAVA]"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Polymorphism[JAVA]</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/04/05/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/OOP/Inheritance/" title="Inheritance[JAVA]"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Inheritance[JAVA]</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/03/28/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/OOP/Encapsulation/" title="Encapsulation[JAVA]"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Encapsulation[JAVA]</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Git"
+        id="heading-0bcc70105ad279503e31fe7b3f47b665" role="tab" data-toggle="collapse" href="#collapse-0bcc70105ad279503e31fe7b3f47b665"
+        aria-expanded="false"
+      >
+        Git
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/Git/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>2</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-0bcc70105ad279503e31fe7b3f47b665"
+           role="tabpanel" aria-labelledby="heading-0bcc70105ad279503e31fe7b3f47b665">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2022/04/04/Git%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/Git%E9%83%A8%E7%BD%B2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" title="Git部署常见问题"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Git部署常见问题</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/03/26/Git%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/Git%E9%83%A8%E7%BD%B2%E4%BB%A3%E7%A0%81%E6%AD%A5%E9%AA%A4/" title="Git部署代码步骤"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Git部署代码步骤</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Hexo"
+        id="heading-c00d1eb68b529768ba98c975c76a9b66" role="tab" data-toggle="collapse" href="#collapse-c00d1eb68b529768ba98c975c76a9b66"
+        aria-expanded="false"
+      >
+        Hexo
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/Hexo/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>2</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-c00d1eb68b529768ba98c975c76a9b66"
+           role="tabpanel" aria-labelledby="heading-c00d1eb68b529768ba98c975c76a9b66">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2022/04/01/Hexo%E5%8D%9A%E5%AE%A2/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" title="Hexo搭建博客"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Hexo搭建博客</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/03/31/Hexo%E5%8D%9A%E5%AE%A2/PicGo%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/" title="PicGo搭建图床"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">PicGo搭建图床</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Spring5"
+        id="heading-c4d23e3038f475f6a1f555e28805827e" role="tab" data-toggle="collapse" href="#collapse-c4d23e3038f475f6a1f555e28805827e"
+        aria-expanded="false"
+      >
+        Spring5
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/Spring5/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>2</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-c4d23e3038f475f6a1f555e28805827e"
+           role="tabpanel" aria-labelledby="heading-c4d23e3038f475f6a1f555e28805827e">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2022/07/27/Spring5/AOP%E5%9F%BA%E7%A1%80/" title="Spirng5 | AOP基础"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Spirng5 | AOP基础</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/07/21/Spring5/IOC%E5%9F%BA%E7%A1%80/" title="Spirng5 | IOC基础"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Spirng5 | IOC基础</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="SpringMVC"
+        id="heading-ebf85741b99c595fd8e371acde50121c" role="tab" data-toggle="collapse" href="#collapse-ebf85741b99c595fd8e371acde50121c"
+        aria-expanded="false"
+      >
+        SpringMVC
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/SpringMVC/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>2</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-ebf85741b99c595fd8e371acde50121c"
+           role="tabpanel" aria-labelledby="heading-ebf85741b99c595fd8e371acde50121c">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2022/10/21/SpringMVC/RequestMapping/" title="Spring5 | @RequestMapping"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Spring5 | @RequestMapping</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/10/21/SpringMVC/SpringMVC%E5%9F%BA%E7%A1%80/" title="Spring5 | MVC基础"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Spring5 | MVC基础</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+</div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

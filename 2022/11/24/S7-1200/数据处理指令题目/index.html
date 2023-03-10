@@ -1,0 +1,718 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/code.png">
+  <link rel="icon" href="/img/code.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="1、抢答器 在主持人按下起动按钮SB3，5秒内三组选手可以抢答； 某组抢答成功时显示该组号，同时锁住其他组使其不能抢答。 若超过5秒，三组选手将无法再进行抢答，同时数码管以0进行秒级闪烁 主持按人按下复位按钮SB1后，数码管熄灭，等待下一轮抢答。      2、红绿灯 按下开始按钮 东西方向：绿灯亮3秒，闪动2秒后熄灭，接着黄灯亮2秒后熄灭，红灯亮7秒后熄灭； 与此同时 南北方向：红灯亮7秒后熄灭">
+<meta property="og:type" content="article">
+<meta property="og:title" content="S7-1200数据处理指令">
+<meta property="og:url" content="http://example.com/2022/11/24/S7-1200/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8C%87%E4%BB%A4%E9%A2%98%E7%9B%AE/index.html">
+<meta property="og:site_name" content="小郝博客 - Hexo博客">
+<meta property="og:description" content="1、抢答器 在主持人按下起动按钮SB3，5秒内三组选手可以抢答； 某组抢答成功时显示该组号，同时锁住其他组使其不能抢答。 若超过5秒，三组选手将无法再进行抢答，同时数码管以0进行秒级闪烁 主持按人按下复位按钮SB1后，数码管熄灭，等待下一轮抢答。      2、红绿灯 按下开始按钮 东西方向：绿灯亮3秒，闪动2秒后熄灭，接着黄灯亮2秒后熄灭，红灯亮7秒后熄灭； 与此同时 南北方向：红灯亮7秒后熄灭">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://assets.new.siemens.com/siemens/assets/api/uuid:949810fa4b3b04bf5027400fa6bb8e0b83b51c03/width:750/crop:0:0,22656:0,99781:0,50195/quality:high/digital-layer-basic-controller.jpg">
+<meta property="article:published_time" content="2022-11-24T02:09:04.000Z">
+<meta property="article:modified_time" content="2022-11-24T15:16:36.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="PLC">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://assets.new.siemens.com/siemens/assets/api/uuid:949810fa4b3b04bf5027400fa6bb8e0b83b51c03/width:750/crop:0:0,22656:0,99781:0,50195/quality:high/digital-layer-basic-controller.jpg">
+  
+  
+  
+  <title>S7-1200数据处理指令 - 小郝博客 - Hexo博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Kinozspace.top</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://assets.new.siemens.com/siemens/assets/api/uuid:949810fa4b3b04bf5027400fa6bb8e0b83b51c03/width:750/crop:0:0,22656:0,99781:0,50195/quality:high/digital-layer-basic-controller.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="S7-1200数据处理指令"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-11-24 10:09" pubdate>
+          November 24, 2022 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          602 words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          6 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">S7-1200数据处理指令</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="1、抢答器"><a href="#1、抢答器" class="headerlink" title="1、抢答器"></a>1、抢答器</h2><ul>
+<li>在主持人按下起动按钮SB3，5秒内三组选手可以抢答；</li>
+<li>某组抢答成功时显示该组号，同时锁住其他组使其不能抢答。</li>
+<li>若超过5秒，三组选手将无法再进行抢答，同时数码管以0进行秒级闪烁</li>
+<li>主持按人按下复位按钮SB1后，数码管熄灭，等待下一轮抢答。</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/25904c02856a4869bd8253ac03b72a9f.png#pic_center" srcset="/img/loading.gif" lazyload alt="启动程序"></p>
+<p><img src="https://img-blog.csdnimg.cn/9f7a1f17633c462d9179f1b670b0ad07.png#pic_center" srcset="/img/loading.gif" lazyload alt="三组选手"></p>
+<p><img src="https://img-blog.csdnimg.cn/9569b8bd6002442696752eac14530cbc.png#pic_center" srcset="/img/loading.gif" lazyload alt="三组选手的灯和停止按钮"></p>
+<p><img src="https://img-blog.csdnimg.cn/8e180a108b09401db43b519e7b2e0171.png#pic_center" srcset="/img/loading.gif" lazyload alt="IO分配表"></p>
+<h2 id="2、红绿灯"><a href="#2、红绿灯" class="headerlink" title="2、红绿灯"></a>2、红绿灯</h2><ul>
+<li>按下开始按钮</li>
+<li>东西方向：绿灯亮3秒，闪动2秒后熄灭，接着黄灯亮2秒后熄灭，红灯亮7秒后熄灭；</li>
+<li>与此同时</li>
+<li>南北方向：红灯亮7秒后熄灭，绿灯亮3秒，闪动2秒，接着黄灯亮2秒后熄灭</li>
+<li>如此循环下去。无论何时按下停止按钮，所有的灯都熄灭。</li>
+</ul>
+<h3 id="2-1、比较指令"><a href="#2-1、比较指令" class="headerlink" title="2.1、比较指令"></a>2.1、比较指令</h3><p><img src="https://img-blog.csdnimg.cn/5429c1e323894df8af34444cb3ccb480.png#pic_center" srcset="/img/loading.gif" lazyload alt="启动停止程序"></p>
+<p><img src="https://img-blog.csdnimg.cn/0a671247b8d44f159bcbdbff9ff748dc.png#pic_center" srcset="/img/loading.gif" lazyload alt="Q0.0东西绿 Q0.1东西黄 Q0.2东西红"></p>
+<p><img src="https://img-blog.csdnimg.cn/e87f69b494c644de9b831495d1ed5c09.png#pic_center" srcset="/img/loading.gif" lazyload alt="Q0.3南北绿 Q0.4南北黄 Q0.5南北红"></p>
+<h3 id="2-2、顺序设计法"><a href="#2-2、顺序设计法" class="headerlink" title="2.2、顺序设计法"></a>2.2、顺序设计法</h3><p><img src="https://img-blog.csdnimg.cn/eab873f1926f48b19a86e40caac6bfe1.png#pic_center" srcset="/img/loading.gif" lazyload alt="启动停止"></p>
+<p><img src="https://img-blog.csdnimg.cn/3376783c700e466aaa42e8d6a654f01e.png#pic_center" srcset="/img/loading.gif" lazyload alt="东西方向1"></p>
+<p><img src="https://img-blog.csdnimg.cn/68f87e18870e4fcaa10a2162be31dbe3.png#pic_center" srcset="/img/loading.gif" lazyload alt="东西方向2 程序段6开始 南北方向"></p>
+<p><img src="https://img-blog.csdnimg.cn/c78ba54513da4df09df6b08b5ed59c17.png#pic_center" srcset="/img/loading.gif" lazyload alt="南北方向1"></p>
+<p><img src="https://img-blog.csdnimg.cn/b39001ebbb694448b0e30588b649aceb.png#pic_center" srcset="/img/loading.gif" lazyload alt="南北方向2 程序段10 东西方向灯得电"></p>
+<p><img src="https://img-blog.csdnimg.cn/43b825029bbf4ffba77b303e190d5074.png#pic_center" srcset="/img/loading.gif" lazyload alt="停止，南北方向灯得电"></p>
+<h2 id="4、九秒倒计时"><a href="#4、九秒倒计时" class="headerlink" title="4、九秒倒计时"></a>4、九秒倒计时</h2><ul>
+<li>按下起动SB5按钮后，开始以秒为单位9秒倒计时，倒计时到0停止且进行秒级闪烁。</li>
+<li>按下复位按钮SB1后，数码管熄灭等待下一轮倒计时。</li>
+</ul>
+<h3 id="4-1、比较指令"><a href="#4-1、比较指令" class="headerlink" title="4.1、比较指令"></a>4.1、比较指令</h3><p><img src="https://img-blog.csdnimg.cn/15c0cfce8a5a470bbe6875545172eb73.png#pic_center" srcset="/img/loading.gif" lazyload alt="启动程序"></p>
+<p><img src="https://img-blog.csdnimg.cn/003caaa36ff34779b07000de430441e5.png#pic_center" srcset="/img/loading.gif" lazyload alt="主程序块"></p>
+<h3 id="4-2、减法指令"><a href="#4-2、减法指令" class="headerlink" title="4.2、减法指令"></a>4.2、减法指令</h3><p><img src="https://img-blog.csdnimg.cn/4352aec7ebde4318aebc805af98a946d.png#pic_center" srcset="/img/loading.gif" lazyload alt="启动部分"></p>
+<p><img src="https://img-blog.csdnimg.cn/631ec5b5f89a4a4589dcf0243ded98fa.png#pic_center" srcset="/img/loading.gif" lazyload alt="注:当MD10=0时候 后面跟M2.0常开 保持0时候的长亮"></p>
+<p><img src="https://img-blog.csdnimg.cn/1d84780743e54096877161799a1ba84e.png#pic_center" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
+<h2 id="5、八盏跑马灯"><a href="#5、八盏跑马灯" class="headerlink" title="5、八盏跑马灯"></a>5、八盏跑马灯</h2><ul>
+<li>若按下开始按钮，指示灯从第1盏灯开始</li>
+<li>以1秒的速度进行左移位，实现8盏灯的循环点亮控制</li>
+<li>无论何时按下停止按钮，指示灯全部熄灭</li>
+</ul>
+<h3 id="5-1-比较指令"><a href="#5-1-比较指令" class="headerlink" title="5.1 比较指令"></a>5.1 比较指令</h3><p><img src="https://img-blog.csdnimg.cn/2bd5ca9167324b6c8b6a3e07d053a9b2.png#pic_center" srcset="/img/loading.gif" lazyload alt="时间可能为9或者10秒"></p>
+<h3 id="5-2-移位"><a href="#5-2-移位" class="headerlink" title="5.2 移位"></a>5.2 移位</h3><p><img src="https://img-blog.csdnimg.cn/c1bb1af9b9684a42a50f217291111415.png#pic_center" srcset="/img/loading.gif" lazyload alt="SHL移位"><br><img src="https://img-blog.csdnimg.cn/e660b1ec90844b47b7a5a53291be30b3.png#pic_center" srcset="/img/loading.gif" lazyload alt="SHL移位"></p>
+<h3 id="5-3-循环移位"><a href="#5-3-循环移位" class="headerlink" title="5.3 循环移位"></a>5.3 循环移位</h3><p><img src="https://img-blog.csdnimg.cn/acbefbde598441dda714ff7c917a9afc.png#pic_center" srcset="/img/loading.gif" lazyload alt="ROL循环移位"></p>
+<h3 id="5-4-使用函数FC"><a href="#5-4-使用函数FC" class="headerlink" title="5.4 使用函数FC"></a>5.4 使用函数FC</h3><p><img src="https://img-blog.csdnimg.cn/4540423f7cde405a9376190329a891aa.png#pic_center" srcset="/img/loading.gif" lazyload alt="main程序块"><br><img src="https://img-blog.csdnimg.cn/7e260f22e09443f28aa931a678951fea.jpeg#pic_center" srcset="/img/loading.gif" lazyload alt="函数块程序"></p>
+<h2 id="6、数码管显示"><a href="#6、数码管显示" class="headerlink" title="6、数码管显示"></a>6、数码管显示</h2><table>
+<thead>
+<tr>
+<th>数码管显示</th>
+<th>二进制数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>2#111111</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2#110</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2#1011011</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2#1001111</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2#1100110</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2#1101101</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2#1111101</td>
+</tr>
+<tr>
+<td>7</td>
+<td>2#111</td>
+</tr>
+<tr>
+<td>8</td>
+<td>2#1111111</td>
+</tr>
+<tr>
+<td>9</td>
+<td>2#1101111</td>
+</tr>
+</tbody></table>
+<h2 id="7、IO接线图"><a href="#7、IO接线图" class="headerlink" title="7、IO接线图"></a>7、IO接线图</h2><p><strong>！！ IO分配表的数据和实际程序的数据存在不同，自行判定修改 ！！</strong></p>
+<h3 id="7-1-抢答器"><a href="#7-1-抢答器" class="headerlink" title="7.1 抢答器"></a>7.1 抢答器</h3><p><img src="https://img-blog.csdnimg.cn/0337a2cd44c645b3937be7241552d375.jpeg#pic_center" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
+<h3 id="7-2-红绿灯"><a href="#7-2-红绿灯" class="headerlink" title="7.2 红绿灯"></a>7.2 红绿灯</h3><p><img src="https://img-blog.csdnimg.cn/59c0af354b59447c9f100120bcbadad1.jpeg#pic_center" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
+<h3 id="7-3-倒计时"><a href="#7-3-倒计时" class="headerlink" title="7.3 倒计时"></a>7.3 倒计时</h3><p><img src="https://img-blog.csdnimg.cn/5537f4e8ba324f7e9c69ae5d14a43d7e.jpeg#pic_center" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/d31cd937a7ae404c943374a1db430eb0.jpeg#pic_center" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
+<h3 id="7-4-跑马灯"><a href="#7-4-跑马灯" class="headerlink" title="7.4 跑马灯"></a>7.4 跑马灯</h3><p><img src="https://img-blog.csdnimg.cn/8e866ab3c40744d8914138237a0b9bdc.jpeg#pic_center" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/PLC/">#PLC</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>S7-1200数据处理指令</div>
+      <div>http://example.com/2022/11/24/S7-1200/数据处理指令题目/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>November 24, 2022</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/11/18/S7-1200/%E4%BD%8D%E9%80%BB%E8%BE%91%E6%8C%87%E4%BB%A4%E9%A2%98%E7%9B%AE/" title="S7-1200位逻辑指令">
+                        <span class="hidden-mobile">S7-1200位逻辑指令</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

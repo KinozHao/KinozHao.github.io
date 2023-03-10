@@ -1,0 +1,746 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/code.png">
+  <link rel="icon" href="/img/code.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="1.IO流概述 IO流是用来处理设备之间的数据传输 对数组的操作是流方式 对于流的操作的类都在IO包中 按流分为输出类 输入流 按角色分为节点流 处理流 按数据类型分为字节流 字符流 流的异常需使用try catch finally处理  1.1流的体系图  2.字符流 字符流主要用于处理纯文本文件 FileReader和FileWriter设计最常用的类  2.1FileReader123456">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java基础 | IOStream">
+<meta property="og:url" content="http://example.com/2022/06/05/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/SEImprove/IOStream/index.html">
+<meta property="og:site_name" content="小郝博客 - Hexo博客">
+<meta property="og:description" content="1.IO流概述 IO流是用来处理设备之间的数据传输 对数组的操作是流方式 对于流的操作的类都在IO包中 按流分为输出类 输入流 按角色分为节点流 处理流 按数据类型分为字节流 字符流 流的异常需使用try catch finally处理  1.1流的体系图  2.字符流 字符流主要用于处理纯文本文件 FileReader和FileWriter设计最常用的类  2.1FileReader123456">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/io_picb.png">
+<meta property="article:published_time" content="2022-06-05T13:15:06.000Z">
+<meta property="article:modified_time" content="2022-06-17T10:34:46.000Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/io_picb.png">
+  
+  
+  
+  <title>Java基础 | IOStream - 小郝博客 - Hexo博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Kinozspace.top</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/io_picb.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Java基础 | IOStream"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-06-05 21:15" pubdate>
+          June 5, 2022 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.1k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          51 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Java基础 | IOStream</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="1-IO流概述"><a href="#1-IO流概述" class="headerlink" title="1.IO流概述"></a>1.IO流概述</h2><ol>
+<li>IO流是用来处理设备之间的数据传输</li>
+<li>对数组的操作是流方式</li>
+<li>对于流的操作的类都在IO包中</li>
+<li>按流分为输出类 输入流</li>
+<li>按角色分为节点流 处理流</li>
+<li>按数据类型分为字节流 字符流</li>
+<li>流的异常需使用try catch finally处理</li>
+</ol>
+<h3 id="1-1流的体系图"><a href="#1-1流的体系图" class="headerlink" title="1.1流的体系图"></a>1.1流的体系图</h3><p><img src="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/io_picb.png" srcset="/img/loading.gif" lazyload alt="IO体系结构"></p>
+<p><img src="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/io_pic1.png" srcset="/img/loading.gif" lazyload alt="抽象基类实现类"></p>
+<h2 id="2-字符流"><a href="#2-字符流" class="headerlink" title="2.字符流"></a>2.字符流</h2><ul>
+<li>字符流主要用于处理纯文本文件</li>
+<li>FileReader和FileWriter设计最常用的类</li>
+</ul>
+<h3 id="2-1FileReader"><a href="#2-1FileReader" class="headerlink" title="2.1FileReader"></a>2.1FileReader</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//1:提供File对象</span><br><span class="hljs-type">File</span> <span class="hljs-variable">file</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">File</span>(<span class="hljs-string">&quot;a.txt&quot;</span>);<br><span class="hljs-comment">//2:提供流对象对File操纵</span><br>FileReader fr= <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileReader</span>(file);<br><span class="hljs-comment">//3.数据的读入</span><br><span class="hljs-comment">//read()返回读入的一个字符,如果达到文件末尾，返回-1</span><br><span class="hljs-type">int</span> <span class="hljs-variable">data</span> <span class="hljs-operator">=</span> fr.read();<br><span class="hljs-keyword">while</span>(data!=-<span class="hljs-number">1</span>)&#123;<br>	System.out.print((<span class="hljs-type">char</span>)data);<br>	data=fr.read();<br>&#125;<br><span class="hljs-comment">//4.流的释放操作</span><br>fr.close();<br></code></pre></td></tr></table></figure>
+<h3 id="2-2FileWriter"><a href="#2-2FileWriter" class="headerlink" title="2.2FileWriter"></a>2.2FileWriter</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/*写入操作若文件不存在会默认把文件创建出来</span><br><span class="hljs-comment">若文件存在，构造器append参数为true就是追加</span><br><span class="hljs-comment">若为false就是覆盖原有数据*/</span><br><br><span class="hljs-type">File</span> <span class="hljs-variable">file</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">File</span>(<span class="hljs-string">&quot;a.txt&quot;</span>);<br><span class="hljs-comment">//append参数为true添加数据 为false覆盖原有数据</span><br><span class="hljs-type">FileWriter</span> <span class="hljs-variable">fw</span> <span class="hljs-operator">=</span><span class="hljs-keyword">new</span> <span class="hljs-title class_">FileWriter</span>(file,<span class="hljs-literal">true</span>);<br>fw.write(<span class="hljs-string">&quot;zh:这是一个txt类型的文件\n&quot;</span>);<br>fw.write(<span class="hljs-string">&quot;en:this is a file end with .txt\n&quot;</span>);<br>fw.close();<br></code></pre></td></tr></table></figure>
+<h2 id="3-字节流"><a href="#3-字节流" class="headerlink" title="3.字节流"></a>3.字节流</h2><ul>
+<li>字节流主要用于处理非文本文件</li>
+<li>当只读取数据的时候字节流也可以处理文本文</li>
+</ul>
+<h3 id="3-1FileInputStream"><a href="#3-1FileInputStream" class="headerlink" title="3.1FileInputStream"></a>3.1FileInputStream</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//1.创建流对象获取文件</span><br><span class="hljs-type">FileInputStream</span> <span class="hljs-variable">lyo</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileInputStream</span>(<span class="hljs-string">&quot;a.txt&quot;</span>);<br><br><span class="hljs-comment">//2.读取数据</span><br><span class="hljs-type">byte</span>[] bt = <span class="hljs-keyword">new</span> <span class="hljs-title class_">byte</span>[<span class="hljs-number">5</span>];<br><span class="hljs-type">int</span> len;<br><span class="hljs-comment">//循环判断如果读取的字节数据不为-1就执行</span><br><span class="hljs-keyword">while</span> ((len=lyo.read(bt)) != -<span class="hljs-number">1</span>)&#123;<br>    <span class="hljs-comment">//输出为数组</span><br>    <span class="hljs-comment">/*for (int i = 0; i &lt; len; i++) &#123;</span><br><span class="hljs-comment">        System.out.print(bt[i]+&quot; &quot;);</span><br><span class="hljs-comment">    &#125;*/</span><br>    <span class="hljs-comment">//输出为字符</span><br>    <span class="hljs-type">String</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(bt, <span class="hljs-number">0</span>, len);<br>    System.out.println(s);<br>&#125;<br><br><span class="hljs-comment">//3.释放流</span><br>lyo.close();<br></code></pre></td></tr></table></figure>
+
+<h3 id="3-2FileOutputStream"><a href="#3-2FileOutputStream" class="headerlink" title="3.2FileOutputStream"></a>3.2FileOutputStream</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@IOAnnotation(&quot;字节流适用于除文本文件外文件的复制操作&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">unTestCopy</span><span class="hljs-params">(String beginPath,String endPath)</span> <span class="hljs-keyword">throws</span> IOException&#123;<br>    <span class="hljs-comment">//1.创建流对象获取文件</span><br>    <span class="hljs-type">FileInputStream</span> <span class="hljs-variable">pic</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileInputStream</span>(beginPath);<br>    <span class="hljs-type">FileOutputStream</span> <span class="hljs-variable">cop</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileOutputStream</span>(endPath);<br><br>    <span class="hljs-comment">//2.读取数据(大型文件通常数组为1024个字节)</span><br>    <span class="hljs-type">byte</span>[] bt = <span class="hljs-keyword">new</span> <span class="hljs-title class_">byte</span>[<span class="hljs-number">1024</span>];<br>    <span class="hljs-type">int</span> len;<br>    <span class="hljs-keyword">while</span> ((len = pic.read(bt)) != -<span class="hljs-number">1</span>)&#123;<br>        cop.write(bt,<span class="hljs-number">0</span>,len);<br>    &#125;<br><br>    <span class="hljs-comment">//3.释放流</span><br>    pic.close();<br>    cop.close();<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="4-处理流"><a href="#4-处理流" class="headerlink" title="4.处理流"></a>4.处理流</h2><ol>
+<li>处理流就是在原本流的基础上增加功能</li>
+<li>处理流也是装配设计模式在Java语言中的体现</li>
+</ol>
+<h3 id="4-1缓冲流"><a href="#4-1缓冲流" class="headerlink" title="4.1缓冲流"></a>4.1缓冲流</h3><ol>
+<li>缓冲流的内部提供了一个缓冲区域</li>
+<li>可以使得数据的读写传输速度更快</li>
+<li>在流的体系图中带有Buffered的即为缓冲流</li>
+</ol>
+<p><strong>字节流</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Test</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">io_Copy</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>	<span class="hljs-comment">//1.创建字符流包装到缓冲流中  </span><br>    <span class="hljs-type">FileInputStream</span> <span class="hljs-variable">origin</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileInputStream</span>(<span class="hljs-string">&quot;E:\\Videos\\滑板.mp4&quot;</span>);<br>    <span class="hljs-type">FileOutputStream</span> <span class="hljs-variable">after</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileOutputStream</span>(<span class="hljs-string">&quot;board.mp4&quot;</span>);<br>    <span class="hljs-type">BufferedInputStream</span> <span class="hljs-variable">bis</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">BufferedInputStream</span>(origin);<br>    <span class="hljs-type">BufferedOutputStream</span> <span class="hljs-variable">bos</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">BufferedOutputStream</span>(after);<br><br>    <span class="hljs-comment">//2.数据的读写</span><br>    <span class="hljs-type">byte</span>[] bt = <span class="hljs-keyword">new</span> <span class="hljs-title class_">byte</span>[<span class="hljs-number">1024</span>];<br>    <span class="hljs-type">int</span> len;<br>    <span class="hljs-keyword">while</span> ((len = bis.read(bt)) != -<span class="hljs-number">1</span>)&#123;<br>        bos.write(bt,<span class="hljs-number">0</span>,len);<br>    &#125;<br><br>    <span class="hljs-comment">//3.释放流(只释放外层即可)</span><br>    bis.close();<br>    bos.close();<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>字符流</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Test</span><span class="hljs-comment">//</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">rw_Copy</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>    <span class="hljs-comment">//1.创建字符流包装到缓冲流中</span><br>    <span class="hljs-type">BufferedReader</span> <span class="hljs-variable">br</span> <span class="hljs-operator">=</span><span class="hljs-keyword">new</span> <span class="hljs-title class_">BufferedReader</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">FileReader</span>(<span class="hljs-string">&quot;hello.txt&quot;</span>));<br>    <span class="hljs-type">BufferedWriter</span> <span class="hljs-variable">bw</span> <span class="hljs-operator">=</span><span class="hljs-keyword">new</span> <span class="hljs-title class_">BufferedWriter</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">FileWriter</span>(<span class="hljs-string">&quot;my.txt&quot;</span>));<br><br>    <span class="hljs-comment">//2.方式一 使用char数组</span><br>    <span class="hljs-comment">/*char[] cr = new char[5];</span><br><span class="hljs-comment">    int len;</span><br><span class="hljs-comment">    while ((len = br.read(cr)) != -1)&#123;</span><br><span class="hljs-comment">        bw.write(cr,0,len);</span><br><span class="hljs-comment">        bw.flush();//刷新缓冲区,后台会默认做无需手动实现</span><br><span class="hljs-comment">    &#125;*/</span><br><br>    <span class="hljs-comment">//2.方式二 使用String以及readLine方法</span><br>    String num;<br>    <span class="hljs-keyword">while</span> ((num = br.readLine()) != <span class="hljs-literal">null</span>)&#123;<br>        bw.write(num+<span class="hljs-string">&quot;\n&quot;</span>);<br>    &#125;<br><br>    <span class="hljs-comment">//3.释放流(只释放外层即可)</span><br>    br.close();<br>    bw.close();<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="4-2转换流"><a href="#4-2转换流" class="headerlink" title="4.2转换流"></a>4.2转换流</h3><ol>
+<li>实现字节流与字符流之间的转换</li>
+<li>InputStreamReader 字节-&gt;字符 相当于解码的过程</li>
+<li>OutputStreamWriter 字符-&gt;字节 相当于编码的过程<br><img src="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/chartobyte.png" srcset="/img/loading.gif" lazyload alt="两者的转换图"></li>
+</ol>
+<p><strong>解码</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//InputStreamReader把字节转换为字符</span><br><span class="hljs-comment">//1.获取流对象,添加进转换流中</span><br><span class="hljs-type">FileInputStream</span> <span class="hljs-variable">files</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileInputStream</span>(<span class="hljs-string">&quot;hello.txt&quot;</span>);<br><span class="hljs-comment">//可以指定字符格式为gbk,也可以不写即为默认</span><br><span class="hljs-type">InputStreamReader</span> <span class="hljs-variable">isr</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">InputStreamReader</span>(files,<span class="hljs-string">&quot;gbk&quot;</span>);<br><br><span class="hljs-comment">//2.读取数据</span><br><span class="hljs-type">int</span> len;<br><span class="hljs-type">char</span>[] cr = <span class="hljs-keyword">new</span> <span class="hljs-title class_">char</span>[<span class="hljs-number">10</span>];<br><span class="hljs-keyword">while</span> ((len = isr.read(cr)) != -<span class="hljs-number">1</span>)&#123;<br>    <span class="hljs-comment">//通过String把数据通过控制台打印</span><br>    <span class="hljs-type">String</span> <span class="hljs-variable">data</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(cr, <span class="hljs-number">0</span>, len);<br>    System.out.print(data);<br>&#125;<br><span class="hljs-comment">//3.关闭流</span><br>isr.close();<br><br></code></pre></td></tr></table></figure>
+
+<p><strong>编码</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//相当于编码操作</span><br><span class="hljs-comment">//1.创建转换流以及流对象 确定转换的字符集</span><br><span class="hljs-type">FileInputStream</span> <span class="hljs-variable">origin</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileInputStream</span>(<span class="hljs-string">&quot;my.txt&quot;</span>);<br><span class="hljs-type">FileOutputStream</span> <span class="hljs-variable">after</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileOutputStream</span>(<span class="hljs-string">&quot;my_utf8.txt&quot;</span>);<br><span class="hljs-type">InputStreamReader</span> <span class="hljs-variable">gbk</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">InputStreamReader</span>(origin, <span class="hljs-string">&quot;gbk&quot;</span>);<br><span class="hljs-type">OutputStreamWriter</span> <span class="hljs-variable">utf</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">OutputStreamWriter</span>(after, <span class="hljs-string">&quot;utf-8&quot;</span>);<br><br><span class="hljs-comment">//2.数据读写操作</span><br><span class="hljs-type">int</span> len;<br><span class="hljs-type">char</span>[] cr = <span class="hljs-keyword">new</span> <span class="hljs-title class_">char</span>[<span class="hljs-number">10</span>];<br><span class="hljs-keyword">while</span> ((len = gbk.read(cr)) != -<span class="hljs-number">1</span>)&#123;<br>    utf.write(cr,<span class="hljs-number">0</span>,len);<br>&#125;<br><br><span class="hljs-comment">//3.关闭流</span><br>gbk.close();<br>utf.close();<br></code></pre></td></tr></table></figure>
+
+<h3 id="4-3对象流"><a href="#4-3对象流" class="headerlink" title="4.3对象流"></a>4.3对象流</h3><ol>
+<li>用于存储和读取基本数据类型或对象</li>
+<li>可以把Java对象写入数据源中||从数据源恢复</li>
+<li>对象流不能操纵被static和transient修饰的成员变量</li>
+<li>反序列化ObjectInputStream</li>
+<li>序列化ObjectOutputStream</li>
+</ol>
+<p><strong>自定义类序列化</strong></p>
+<ol>
+<li>实现serializable接口</li>
+<li>提供serialVersionId常量</li>
+<li>类中的所有属性也必须是序列化的</li>
+</ol>
+<p><strong>对文件的操纵</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Test</span><span class="hljs-comment">//序列化过程</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">OOS</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>    <span class="hljs-type">ObjectOutputStream</span> <span class="hljs-variable">oos</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ObjectOutputStream</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">FileOutputStream</span>(<span class="hljs-string">&quot;myText.dat&quot;</span>));<br><br>    <span class="hljs-comment">//添加对象到流文件中</span><br>    oos.writeObject(<span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(<span class="hljs-string">&quot;this is a secret file&quot;</span>));<br>    oos.flush();<br>    oos.writeObject(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ObjData</span>(<span class="hljs-number">1</span>,<span class="hljs-string">&quot;banana&quot;</span>,<span class="hljs-number">12.3</span>));<br>    oos.flush();<br><br>    oos.close();<br>&#125;<br><br><span class="hljs-meta">@Test</span><span class="hljs-comment">//反序列化过程</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">OIS</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception&#123;<br><br>    <span class="hljs-type">ObjectInputStream</span> <span class="hljs-variable">ois</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ObjectInputStream</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">FileInputStream</span>(<span class="hljs-string">&quot;myText.dat&quot;</span>));<br><br>    <span class="hljs-comment">//获取到数据强转为String输出</span><br>    <span class="hljs-type">Object</span> <span class="hljs-variable">obj</span> <span class="hljs-operator">=</span> ois.readObject();<br>    <span class="hljs-type">String</span> <span class="hljs-variable">str</span> <span class="hljs-operator">=</span> (String)obj;<br><br>    <span class="hljs-comment">//自定义类</span><br>    <span class="hljs-type">ObjData</span> <span class="hljs-variable">oda</span> <span class="hljs-operator">=</span> (ObjData)ois.readObject();<br><br>    <span class="hljs-comment">//获取到序列化文件中数据并输出</span><br>    System.out.println(str);<br>    System.out.println(oda);<br><br>    ois.close();<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="4-4其他流"><a href="#4-4其他流" class="headerlink" title="4.4其他流"></a>4.4其他流</h3><p><strong>标准输入输出流</strong></p>
+<ul>
+<li>System.in 标准输入流</li>
+<li>System.out 标准输出流</li>
+</ul>
+<p><strong>打印流</strong></p>
+<ul>
+<li>PrintStream PrintWriter</li>
+<li>java最基本的输出语句就使用到了打印流</li>
+</ul>
+<p><strong>数据流</strong></p>
+<ul>
+<li>DataInputStream DataOutPutStream</li>
+<li>用于读取写出基本数据类型的变量或字符串</li>
+</ul>
+<h3 id="4-5-RAF"><a href="#4-5-RAF" class="headerlink" title="4.5 RAF"></a>4.5 RAF</h3><ul>
+<li>RandomAccessFile声明在IO中但直接继承Object</li>
+<li>即可作为输出流也可作为输入流</li>
+<li>实现了DataInput DataOutput接口</li>
+<li>创建以后需指定mode参数[r rw rwd rws]说明查看API</li>
+<li>作为输入流时会对原本文件内容进行从头覆盖</li>
+<li>若使用了seek( )则在指定光标位置插入</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//1.创建流对象,传入文件</span><br><span class="hljs-type">File</span> <span class="hljs-variable">fl</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">File</span>(<span class="hljs-string">&quot;1.jpg&quot;</span>);<br><span class="hljs-type">File</span> <span class="hljs-variable">nfl</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">File</span>(<span class="hljs-string">&quot;2.jpg&quot;</span>);<br><span class="hljs-type">RandomAccessFile</span> <span class="hljs-variable">raf</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RandomAccessFile</span>(fl,<span class="hljs-string">&quot;r&quot;</span>);<br><span class="hljs-type">RandomAccessFile</span> <span class="hljs-variable">rag</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RandomAccessFile</span>(nfl,<span class="hljs-string">&quot;rw&quot;</span>);<br><br><span class="hljs-comment">//2.读写</span><br><span class="hljs-type">byte</span>[] bytes = <span class="hljs-keyword">new</span> <span class="hljs-title class_">byte</span>[<span class="hljs-number">1024</span>];<br><span class="hljs-type">int</span> len;<br><span class="hljs-keyword">while</span> ((len = raf.read(bytes)) != -<span class="hljs-number">1</span>)&#123;<br>    rag.write(bytes,<span class="hljs-number">0</span>,len);<br>&#125;<br><span class="hljs-comment">//3.释放流</span><br>raf.close();<br>rag.close();<br><br><span class="hljs-comment">//若需处理字符文件可以通过seek方法指定索引位置</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="5-File类"><a href="#5-File类" class="headerlink" title="5.File类"></a>5.File类</h2><ol>
+<li>在java中对文件和文件目录路径的抽象表示形式</li>
+<li>File在这里应该理解为路径，文件路径或文件夹路径</li>
+<li>File类提供了对文件操作的基本方法,但没提供修改相关操作，需读写就需要使用IO流</li>
+<li>File类对象会作为参数传入IO流中</li>
+</ol>
+<p>相对路径:指相较于某个路径下所指明的路径</p>
+<p>绝对路径:指包含盘符的所有路径</p>
+<h3 id="5-1常用方法"><a href="#5-1常用方法" class="headerlink" title="5.1常用方法"></a>5.1常用方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java">createNewFile    创建指定类型文件<br>mkdir            创建文件夹<br>mkdirs           创建文件夹,若父类文件夹不存在,也会自动生成<br><span class="hljs-type">File</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">File</span>(<span class="hljs-string">&quot;Go.txt&quot;</span>);<br><span class="hljs-type">File</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">File</span>(<span class="hljs-string">&quot;Java.txt&quot;</span>);<br><span class="hljs-comment">//路径相同的情况下,进行换名,如果不同就是剪贴和改名</span><br>System.out.println(a.renameTo(b)); <br>a.delete() 删除文件不走回收站<br><br>判断方法<br>isDirectory    判断是不是一个根目录<br>isFile         判断是不是一个文件<br>canRead        判断文件可不可读<br>canWrite       判断文件可不可写<br>isHidden       判断是不是隐藏文件<br><br>获取方法<br>String <span class="hljs-title function_">getAbsolutePath</span><span class="hljs-params">()</span>;  获取绝对路径<br>String  <span class="hljs-title function_">getPath</span><span class="hljs-params">()</span>;         获取路径<br>String  <span class="hljs-title function_">getName</span><span class="hljs-params">()</span>;         获取名称<br><span class="hljs-type">long</span> <span class="hljs-title function_">length</span><span class="hljs-params">()</span>;             获取长度字节数<br><span class="hljs-type">long</span> <span class="hljs-title function_">lastModified</span><span class="hljs-params">()</span>;       获取最后一次修改时间,毫秒值<br>获取指定目录下的所有文件或文件夹的名称数组<br>String[] list();<br>获取指定目录下的所有文件或文件夹的File数组           <br>File[] listFiles();        <br></code></pre></td></tr></table></figure>
+
+<h3 id="5-2构造器"><a href="#5-2构造器" class="headerlink" title="5.2构造器"></a>5.2构造器</h3><p>根据一个路径得到File对象<br>File(String pathname):</p>
+<p>根据一个目录和一个子文件&#x2F;目录得到File对象<br>File(String parent,String child):</p>
+<p>根据一个父file对象和一个子文件&#x2F;目录得到File对象<br>File(File parent,String child):</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Java/" class="category-chain-item">Java</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Java基础 | IOStream</div>
+      <div>http://example.com/2022/06/05/Java初级部分/SEImprove/IOStream/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>June 5, 2022</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/06/17/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/SEImprove/NetCode/" title="Java基础 | NetCode">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Java基础 | NetCode</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/05/23/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/SEImprove/JavaCollection/" title="Java基础 | Collection">
+                        <span class="hidden-mobile">Java基础 | Collection</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

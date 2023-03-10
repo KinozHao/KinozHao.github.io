@@ -1,0 +1,905 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/code.png">
+  <link rel="icon" href="/img/code.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta property="og:type" content="website">
+<meta property="og:title" content="小郝博客 - Hexo博客">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="小郝博客 - Hexo博客">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>小郝博客 - Hexo博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Kinozspace.top</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/night.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="不必行色匆匆 不必光芒四射 不必成为别人 只需做自己。"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/07/04/JavaWeb/Maven%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/" target="_self">
+          <img src="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/ApacheMavenConfig.jpg" srcset="/img/loading.gif" lazyload alt="Maven安装使用">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/07/04/JavaWeb/Maven%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/" target="_self">
+          Maven安装使用
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2022/07/04/JavaWeb/Maven%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/" target="_self">
+        <div>
+          1.Maven配置1.1操作步骤 Apache Maven Download Apache Maven Repository 解压zip文件到指定目录下 修改conf目录下的setting.xml 添加本地仓库地址用于存储类库 添加阿里云镜像快速下载类库 添加Maven到环境变量,cmd运行mvn -v跳出版本号配置成功  1.2修改setting.xml123456789&lt;!--阿里云镜像
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-07-04 11:50" pubdate>
+              2022-07-04
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Utils/">#Utils</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/06/30/MySQL/JDBC%E9%85%8D%E7%BD%AE/" target="_self">
+          <img src="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/jdbcinstall.jpg" srcset="/img/loading.gif" lazyload alt="JDBC安装使用">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/06/30/MySQL/JDBC%E9%85%8D%E7%BD%AE/" target="_self">
+          JDBC安装使用
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2022/06/30/MySQL/JDBC%E9%85%8D%E7%BD%AE/" target="_self">
+        <div>
+          1.JDBC概述 是Java和数据库之间的一个桥梁 是一个规范而不是一个实现，能够执行SQL语句 它由一组用Java语言编写的类和接口组成 各种不同类型的数据库都有相应的实现的  2.配置JDBCJDBC-Connector下载地址，若MySQL版本为8以上，则下载版本为8以上的驱动 导入IDEA的Global Libraries每个Moudles使用时只需调用即可 3.建立连接12// 1.通过
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-06-30 10:20" pubdate>
+              2022-06-30
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Utils/">#Utils</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/06/30/MySQL/MySQL%E5%85%B6%E4%BB%96/" target="_self">
+          <img src="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/MySQLothers.jpg" srcset="/img/loading.gif" lazyload alt="MySQL基础 | Others">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/06/30/MySQL/MySQL%E5%85%B6%E4%BB%96/" target="_self">
+          MySQL基础 | Others
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2022/06/30/MySQL/MySQL%E5%85%B6%E4%BB%96/" target="_self">
+        <div>
+          1.事务 要么都成功要么都失败 A给B转钱要确定B能收到，A的钱同时减少 mysql默认开启事务  1.1AOID原则 原子性Atomicity、事务里的操作要么全做，要么全不做 一致性Consistency、数据无论怎么去操作最终的数据要保持一致 独立性Isolation、并发的事务之间不存在互相干扰 持久性Durablity、一但事务提交，他所做的修改会永远保存在数据库上，出现宏机也不会丢失
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-06-30 10:09" pubdate>
+              2022-06-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/MySQL/" class="category-chain-item">MySQL</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/06/27/MySQL/MYSQLDQL/" target="_self">
+          <img src="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/mysqllogo.jpg" srcset="/img/loading.gif" lazyload alt="MySQL基础 | DQL">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/06/27/MySQL/MYSQLDQL/" target="_self">
+          MySQL基础 | DQL
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2022/06/27/MySQL/MYSQLDQL/" target="_self">
+        <div>
+          1.DQL概述 数据查询语言DQL基本结构是由SELECT子句，FROM子句，WHERE 子句组成的查询块：1SELECT &lt;字段名表&gt; FROM &lt;表或视图名&gt; WHERE &lt;查询条件&gt;  2.基本查询2.1查询语法1234567891011121314-- 书写格式SELECT 字段名,...,字段名 FROM 表名;-- 基本表中所有数据SELECT *
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-06-27 20:01" pubdate>
+              2022-06-27
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/MySQL/" class="category-chain-item">MySQL</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/06/25/MySQL/MySQL%E6%93%8D%E7%BA%B5/" target="_self">
+          <img src="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/mysqldml.jpg" srcset="/img/loading.gif" lazyload alt="MySQL基础 | DML">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/06/25/MySQL/MySQL%E6%93%8D%E7%BA%B5/" target="_self">
+          MySQL基础 | DML
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2022/06/25/MySQL/MySQL%E6%93%8D%E7%BA%B5/" target="_self">
+        <div>
+          1.DML概述 数据操纵语言（Data Manipulation Language, DML）是用于数据库操作 对数据库其中的对象和数据运行访问工作的编程语句 通常是数据库专用编程语言之中的一个子集，例如在信息软件产业通行标准的SQL语言中 以INSERT、UPDATE、DELETE三种指令为核心，分别代表插入(意指新增或创建)、更新(修改)与删除(销毁)  2.INSERT语句 字段可以为多个或
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-06-25 20:45" pubdate>
+              2022-06-25
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/MySQL/" class="category-chain-item">MySQL</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/06/23/MySQL/MySQL%E6%A6%82%E8%BF%B0/" target="_self">
+          <img src="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/mysqlbasicknowledge.jpg" srcset="/img/loading.gif" lazyload alt="MySQL基础 | OVERVIEW">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/06/23/MySQL/MySQL%E6%A6%82%E8%BF%B0/" target="_self">
+          MySQL基础 | OVERVIEW
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2022/06/23/MySQL/MySQL%E6%A6%82%E8%BF%B0/" target="_self">
+        <div>
+          1.数据库概述1.1两种类型关系型数据库 MySQL、sqlServer等，通过表和表之间、行和行之间的关系进行数据库连接 非关系型数据库 Redi、MongDB等,对象存储、通过对象自身的属性来决定 1.2DB&#x2F;DBS&#x2F;DBMS三者关系 DBS包括DB和DBMS。数据库系统是一个通称，包括数据库、数据库管理系统、数据库管理人员等的统称，是最大的范畴。 DBMS和DB：DBMS
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-06-23 09:26" pubdate>
+              2022-06-23
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/MySQL/" class="category-chain-item">MySQL</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/06/22/MySQL/MySQL%E5%AE%89%E8%A3%85/" target="_self">
+          <img src="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/mysqllogo.jpg" srcset="/img/loading.gif" lazyload alt="MySQL安装使用">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/06/22/MySQL/MySQL%E5%AE%89%E8%A3%85/" target="_self">
+          MySQL安装使用
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2022/06/22/MySQL/MySQL%E5%AE%89%E8%A3%85/" target="_self">
+        <div>
+          1.配置准备MySQL 官网 建议选择5.0以上和JDK8类似是主流的开发版本号 可视化IDE: SQLyog 2.操作步骤1.解压mysql安装包 根目录新建my.ini文件 12345678[mysqld]#端口port=3306#数据库位置basedir=D:\MySQL-5.7.20\#数据库data目录datadir=D:\MySQL-5.7.20\data\#skip-grant-ta
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-06-22 23:14" pubdate>
+              2022-06-22
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Utils/">#Utils</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/06/20/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/SEImprove/Reflex/" target="_self">
+          <img src="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/javareflex.jpg" srcset="/img/loading.gif" lazyload alt="Java基础 | Reflex">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/06/20/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/SEImprove/Reflex/" target="_self">
+          Java基础 | Reflex
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2022/06/20/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/SEImprove/Reflex/" target="_self">
+        <div>
+          1.反射概述 反射机制是在运行状态中，被视为动态语言的关键 对于任意类或对象，都能够获取他们的内部成员 这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制 通过class文件对象，去使用该文件中的属性 构造器 方法等一切成员变量    1.1创建对象1234567891011121314151617181920212223//获取指定对象赋给Class类Class file
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-06-20 19:58" pubdate>
+              2022-06-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Java/" class="category-chain-item">Java</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/06/17/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/SEImprove/NetCode/" target="_self">
+          <img src="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/javanetwork.jpg" srcset="/img/loading.gif" lazyload alt="Java基础 | NetCode">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/06/17/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/SEImprove/NetCode/" target="_self">
+          Java基础 | NetCode
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2022/06/17/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/SEImprove/NetCode/" target="_self">
+        <div>
+          1.网络编程概述 作为网络语言，java提供了对网络应用程序的支持 提供了一系列网络类库java.net库，实现网络的连接 通过网络协议直接或间接的实现计算机的数据交换，通讯 网络编程的主要问题，如何精准定位网络上一或多台主机，或者主机上的特定的应用，确定主机后如何精准的进行数据传输。  2.通讯要素2.1IP概述 IP作为计算的唯一标识,分为IPV4和IPV6 地址又分为公网地址和私有地址 使用
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-06-17 18:35" pubdate>
+              2022-06-17
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Java/" class="category-chain-item">Java</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/06/05/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/SEImprove/IOStream/" target="_self">
+          <img src="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/io_picb.png" srcset="/img/loading.gif" lazyload alt="Java基础 | IOStream">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/06/05/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/SEImprove/IOStream/" target="_self">
+          Java基础 | IOStream
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2022/06/05/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/SEImprove/IOStream/" target="_self">
+        <div>
+          1.IO流概述 IO流是用来处理设备之间的数据传输 对数组的操作是流方式 对于流的操作的类都在IO包中 按流分为输出类 输入流 按角色分为节点流 处理流 按数据类型分为字节流 字符流 流的异常需使用try catch finally处理  1.1流的体系图  2.字符流 字符流主要用于处理纯文本文件 FileReader和FileWriter设计最常用的类  2.1FileReader123456
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-06-05 21:15" pubdate>
+              2022-06-05
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Java/" class="category-chain-item">Java</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#board">3</a><a class="page-number" href="/page/4/#board">4</a><a class="extend next" rel="next" href="/page/3/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

@@ -1,0 +1,713 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/code.png">
+  <link rel="icon" href="/img/code.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="1.什么是封装性1.1封装核心 是指隐藏对象的属性和实现细节,仅对外提供公共访问方式 打个比喻来说，一个手电筒，用户只需要知道开关和充电的功能即可 内部的电路板，元器件需要进行封装隐藏起来  1.2封装原则 将不需要对外提供的内容都隐藏起来 把属性隐藏,提供公共方法对其访问  1.3封装的好处 隐藏实现细节，提供公共的访问方式 提高了代码的复用性，提高安全性1234567891011class t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Encapsulation[JAVA]">
+<meta property="og:url" content="http://example.com/2022/03/28/Java%E5%88%9D%E7%BA%A7%E9%83%A8%E5%88%86/OOP/Encapsulation/index.html">
+<meta property="og:site_name" content="小郝博客 - Hexo博客">
+<meta property="og:description" content="1.什么是封装性1.1封装核心 是指隐藏对象的属性和实现细节,仅对外提供公共访问方式 打个比喻来说，一个手电筒，用户只需要知道开关和充电的功能即可 内部的电路板，元器件需要进行封装隐藏起来  1.2封装原则 将不需要对外提供的内容都隐藏起来 把属性隐藏,提供公共方法对其访问  1.3封装的好处 隐藏实现细节，提供公共的访问方式 提高了代码的复用性，提高安全性1234567891011class t">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/javapackage.png">
+<meta property="article:published_time" content="2022-03-28T14:12:30.000Z">
+<meta property="article:modified_time" content="2022-06-05T14:24:00.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="面向对象">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://blogpic-1310626923.cos.ap-nanjing.myqcloud.com/img/javapackage.png">
+  
+  
+  
+  <title>Encapsulation[JAVA] - 小郝博客 - Hexo博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Kinozspace.top</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Encapsulation[JAVA]"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-03-28 22:12" pubdate>
+          March 28, 2022 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.1k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          18 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Encapsulation[JAVA]</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="1-什么是封装性"><a href="#1-什么是封装性" class="headerlink" title="1.什么是封装性"></a>1.什么是封装性</h2><h3 id="1-1封装核心"><a href="#1-1封装核心" class="headerlink" title="1.1封装核心"></a>1.1封装核心</h3><ol>
+<li>是指隐藏对象的属性和实现细节,仅对外提供公共访问方式</li>
+<li>打个比喻来说，一个手电筒，用户只需要知道开关和充电的功能即可</li>
+<li>内部的电路板，元器件需要进行封装隐藏起来</li>
+</ol>
+<h3 id="1-2封装原则"><a href="#1-2封装原则" class="headerlink" title="1.2封装原则"></a>1.2封装原则</h3><ol>
+<li>将不需要对外提供的内容都隐藏起来</li>
+<li>把属性隐藏,提供公共方法对其访问</li>
+</ol>
+<h3 id="1-3封装的好处"><a href="#1-3封装的好处" class="headerlink" title="1.3封装的好处"></a>1.3封装的好处</h3><ol>
+<li>隐藏实现细节，提供公共的访问方式</li>
+<li>提高了代码的复用性，提高安全性<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">test</span>&#123;<br>	<span class="hljs-keyword">private</span> <span class="hljs-type">int</span> age;	<span class="hljs-comment">//修饰属性</span><br>	<span class="hljs-keyword">private</span> String name;<br>    <br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">test</span><span class="hljs-params">()</span>&#123;	<span class="hljs-comment">//修饰构造器</span><br>    <br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">eat</span><span class="hljs-params">()</span>&#123;	<span class="hljs-comment">//修饰方法</span><br>    <br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="1-4高内聚-低耦合"><a href="#1-4高内聚-低耦合" class="headerlink" title="1.4高内聚 低耦合"></a>1.4高内聚 低耦合</h3><p>高内聚:类的内部数据操作细节自己完成，不允许外部干涉<br>低耦合:仅对外暴漏少量的方法用于使用</p>
+<h3 id="1-5属性的获取"><a href="#1-5属性的获取" class="headerlink" title="1.5属性的获取"></a>1.5属性的获取</h3><p>在对一个属性私有化的同时，除了提供公共的设置方法外，还需要提供获取方法<br>即 set方法与get方法<br>两种方法共同构成了属性的获取<br>注：这只是封装性的一种体现，并不能完全代表封装性</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">test</span>&#123;<br>	<span class="hljs-keyword">private</span> <span class="hljs-type">int</span> age;<br>    <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setage</span><span class="hljs-params">(<span class="hljs-type">int</span> age)</span>&#123;<br>    	<span class="hljs-built_in">this</span>.age = age;<br>    &#125;<br>    <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getage</span><span class="hljs-params">()</span>&#123;<br>    	<span class="hljs-keyword">return</span> age;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="2-权限修饰符"><a href="#2-权限修饰符" class="headerlink" title="2.权限修饰符"></a>2.权限修饰符</h2><p>|  类型   | 本类  | 同一个包下  | 不同包下 | 同一个工程下  |<br>|  —-  | —-  | —-  | —-  | —-  | —-  |<br>| private  | √ | x | x | x |<br>| 缺省  | √ | √ | x | x |<br>| protected  | √ | √ | √ | x |<br>| public  | √ | √ | √ | √ |</p>
+<h3 id="2-1用法"><a href="#2-1用法" class="headerlink" title="2.1用法"></a>2.1用法</h3><ul>
+<li>封装的体现需要权限修饰符配合</li>
+<li>四种权限修饰符都可以修饰类及类的内部结构：属性、方法、构造器、内部类</li>
+<li>修饰类的话只能用：pulibc或者缺省</li>
+</ul>
+<h2 id="3-再谈封装性"><a href="#3-再谈封装性" class="headerlink" title="3.再谈封装性"></a>3.再谈封装性</h2><p><em><strong>Java提供了四种不同的权限修饰符来修饰类及其类的内部结构<br>体现了类和类的内部结构在被调用时候的可见性大小</strong></em></p>
+<h2 id="4-构造器"><a href="#4-构造器" class="headerlink" title="4.构造器"></a>4.构造器</h2><h3 id="4-1构造器核心"><a href="#4-1构造器核心" class="headerlink" title="4.1构造器核心"></a>4.1构造器核心</h3><ol>
+<li>就是用来造对象的,就是在你创建对象时候new后面就是</li>
+<li>若我们没有去定义类的构造器,系统会默认创造一个空参的构造器</li>
+<li>若我们给出了构造方法,系统将不再提供默认的无参构造器</li>
+<li>如果我们还想使用无参构造方法,就必须自己给出,建议永远自己给出无参构造方法</li>
+<li>一个类中可以定于多个构造器，就构成了构造器的重载</li>
+</ol>
+<h4 id="4-1-1作用"><a href="#4-1-1作用" class="headerlink" title="4.1.1作用"></a>4.1.1作用</h4><ul>
+<li>创建对象</li>
+<li>初始化对象信息</li>
+</ul>
+<h3 id="4-2格式特点"><a href="#4-2格式特点" class="headerlink" title="4.2格式特点"></a>4.2格式特点</h3><ol>
+<li>方法名和类名相等</li>
+<li>没有返回值类型</li>
+<li>没有具体的返回值，但是可以写return\也可以不写</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java">主类:<br><span class="hljs-type">Person</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>();<span class="hljs-comment">//new后面的就是构造器</span><br><span class="hljs-comment">//c.Person();  构造方法不能用对象调用</span><br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span>&#123;<br>	<span class="hljs-keyword">public</span> <span class="hljs-title function_">Person</span><span class="hljs-params">()</span>&#123;<br>		name=<span class="hljs-string">&quot;小明&quot;</span>;<br>		age=<span class="hljs-number">21</span>;<br>		<span class="hljs-comment">//有return语句，但可不写</span><br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="4-3属性赋值"><a href="#4-3属性赋值" class="headerlink" title="4.3属性赋值"></a>4.3属性赋值</h3><p>属性赋值的先后顺序:<br>默认初始化&gt;显示初始化&gt;构造器初始化&gt;开发常用的</p>
+<p>通过对象.方法或对象.属性的方式赋值<br>开发常用比较灵活</p>
+<h3 id="4-3JavaBean了解"><a href="#4-3JavaBean了解" class="headerlink" title="4.3JavaBean了解"></a>4.3JavaBean了解</h3><p>符合如下标准的Java类:</p>
+<ol>
+<li>类是pulic的</li>
+<li>有一个空参的public构造器</li>
+<li>有属性，且对应的get、set方法</li>
+</ol>
+<h2 id="5-this关键词"><a href="#5-this关键词" class="headerlink" title="5.this关键词"></a>5.this关键词</h2><h3 id="5-1this的作用"><a href="#5-1this的作用" class="headerlink" title="5.1this的作用"></a>5.1this的作用</h3><ol>
+<li>this可以修饰或调用 属性 方法 构造器</li>
+<li>this修饰属性和方法时 this可以理解为当前对象 或当前正在创建的对象</li>
+<li>主要是为了区分属性和局部变量，当两者相同时候属性前加上this即可</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">thistest</span>&#123;<br>    <span class="hljs-keyword">private</span> String name;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setName</span> <span class="hljs-params">(String name)</span>&#123;<br>        <span class="hljs-built_in">this</span>.name = name; <span class="hljs-comment">//this区分属性和形参</span><br>    &#125;<br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getName</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> name;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="5-2this调用构造器"><a href="#5-2this调用构造器" class="headerlink" title="5.2this调用构造器"></a>5.2this调用构造器</h3><ol>
+<li>类的构造器中，可以以this(形参列表)的方式，调用本类中指定的其他构造器</li>
+<li>构造器不可以以this(形参列表)方式去调用自己</li>
+<li>this(形参列表)必须写在构造器的第一行</li>
+<li>最多只能声明一个this(形参列表)，用来调用其他构造器</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">test</span>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> age;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">thistest</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-built_in">this</span>.info();    <span class="hljs-comment">//方法调用方法 this可不写</span><br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">thistest</span><span class="hljs-params">(String name)</span>&#123;<br>        <span class="hljs-built_in">this</span>(); <span class="hljs-comment">//this调用构造器</span><br>        <span class="hljs-built_in">this</span>.name = name;<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">thistest</span><span class="hljs-params">(<span class="hljs-type">int</span> age)</span>&#123;<br>        <span class="hljs-built_in">this</span>();<br>        <span class="hljs-built_in">this</span>.age = age;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setAge</span> <span class="hljs-params">( <span class="hljs-type">int</span> age)</span>&#123;<br>        <span class="hljs-built_in">this</span>.age = age;<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getAge</span> <span class="hljs-params">( )</span>&#123;<br>        <span class="hljs-keyword">return</span> age;<br>    &#125;<br>    <span class="hljs-keyword">public</span> vod <span class="hljs-title function_">info</span><span class="hljs-params">()</span>&#123;&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/OOP/" class="category-chain-item">OOP</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">#面向对象</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Encapsulation[JAVA]</div>
+      <div>http://example.com/2022/03/28/Java初级部分/OOP/Encapsulation/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>March 28, 2022</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/03/31/Hexo%E5%8D%9A%E5%AE%A2/PicGo%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/" title="PicGo搭建图床">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">PicGo搭建图床</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/03/26/Git%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/Git%E9%83%A8%E7%BD%B2%E4%BB%A3%E7%A0%81%E6%AD%A5%E9%AA%A4/" title="Git部署代码步骤">
+                        <span class="hidden-mobile">Git部署代码步骤</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
